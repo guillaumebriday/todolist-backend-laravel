@@ -1,6 +1,20 @@
 # Todolist-backend Application
 
+[![Build Status](https://travis-ci.org/guillaumebriday/todolist-backend.svg?branch=master)](https://travis-ci.org/guillaumebriday/todolist-backend)
+[![Donate](https://img.shields.io/badge/Donate-PayPal-green.svg)](https://www.paypal.me/guillaumebriday)
+
 > Backend for https://github.com/guillaumebriday/todolist-frontend app, built for a serie of articles on my [blog](https://guillaumebriday.fr/).
+
+The purpose of this repository is to provide API with [Laravel](http://laravel.com/) and connecting JavaScript front-end frameworks like [Vue.js](https://vuejs.org) or other clients to them.
+
+Beside Laravel, this project uses other tools like :
+
+- [PHP-CS-Fixer](https://github.com/FriendsOfPhp/PHP-CS-Fixer)
+- [Travis CI](https://travis-ci.org/)
+- [tymon/jwt-auth](https://github.com/tymondesigns/jwt-auth)
+- [spatie/laravel-cors](https://github.com/spatie/laravel-cors)
+- [spatie/laravel-backup](https://github.com/spatie/laravel-backup)
+- [Redis](https://redis.io/)
 
 ## Installation
 
@@ -48,7 +62,7 @@ $ docker-compose run --rm --no-deps todolist-server php artisan package:discover
 
 ## More details
 
-More details are available or to come on [Guillaume Briday's blog](https://blog.guillaumebriday.fr) (French).
+More details are available on my blog post : [https://guillaumebriday.fr/laravel-vuejs-faire-une-todo-list-partie-1-presentation-et-objectifs](https://guillaumebriday.fr/laravel-vuejs-faire-une-todo-list-partie-1-presentation-et-objectifs) (French).
 
 ## Contributing
 
