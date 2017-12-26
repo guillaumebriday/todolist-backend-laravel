@@ -35,6 +35,11 @@ Running php-cs-fixer :
 $ docker-compose run --rm --no-deps todolist-server ./vendor/bin/php-cs-fixer fix --config=.php_cs --verbose --dry-run --diff
 ```
 
+Generating backup :
+```
+$ docker-compose run --rm todolist-server php artisan backup:run --only-db
+```
+
 Discover package
 ```
 $ docker-compose run --rm --no-deps todolist-server php artisan package:discover
