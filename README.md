@@ -15,6 +15,7 @@ $ cd todolist-backend
 $ cp .env.example .env
 $ docker-compose run --rm --no-deps todolist-server composer install
 $ docker-compose run --rm --no-deps todolist-server php artisan key:generate
+$ docker-compose run --rm --no-deps todolist-server php artisan jwt:secret
 $ docker-compose up -d
 ```
 
