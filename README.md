@@ -60,6 +60,34 @@ Discover package
 $ docker-compose run --rm --no-deps todolist-server php artisan package:discover
 ```
 
+## Accessing the API
+
+Clients can access to the REST API. API requests require authentication via JWT. You can create a new one with you credentials.
+
+```bash
+$ curl -X POST localhost/api/v1/auth/login -d "email=your_email&password=your_password"
+```
+
+Then, you can use this token either as url parameter or in Authorization header :
+
+```bash
+# Url parameter
+curl -X POST http://localhost/api/v1/auth/me?token=your_jwt_token_here
+
+# Authorization Header
+curl -X POST --header "Authorization: Bearer your_jwt_token_here" http://localhost/api/v1/auth/me
+```
+
+API are prefixed by ```api``` and the API version number like so ```v1```.
+
+Do not forget to set the ```X-Requested-With``` header to ```XMLHttpRequest```. Otherwise, Laravel won't recognize the call as an AJAX request.
+
+To list all the available routes for API :
+
+```bash
+$ docker-compose run --rm --no-deps todolist-server php artisan route:list
+```
+
 ## More details
 
 More details are available on my blog post : [https://guillaumebriday.fr/laravel-vuejs-faire-une-todo-list-partie-1-presentation-et-objectifs](https://guillaumebriday.fr/laravel-vuejs-faire-une-todo-list-partie-1-presentation-et-objectifs) (French).
