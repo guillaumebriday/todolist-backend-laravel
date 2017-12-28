@@ -11,8 +11,13 @@
 |
 */
 
+
 Route::prefix('v1')->namespace('V1')->group(function () {
     Route::prefix('auth')->namespace('Auth')->group(function () {
+        // Registration Routes...
+        Route::post('register', 'RegisterController@register');
+
+        // JWT Routes
         Route::post('login', 'AuthController@login');
         Route::post('logout', 'AuthController@logout');
         Route::post('refresh', 'AuthController@refresh');
