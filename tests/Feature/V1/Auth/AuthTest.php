@@ -1,0 +1,74 @@
+<?php
+
+namespace Tests\Feature\V1\Auth;
+
+use Illuminate\Foundation\Testing\RefreshDatabase;
+use Tests\TestCase;
+
+class ExampleTest extends TestCase
+{
+    use RefreshDatabase;
+
+    /** @test */
+    public function user_can_retrieve_a_jwt()
+    {
+        $this->anakin();
+
+        $this->json('POST', '/api/v1/auth/login', [
+                'email' => 'anakin@skywalker.st',
+                'password' => '4nak1n'
+            ])
+            ->assertStatus(200)
+            ->assertJsonStructure([
+                'access_token',
+                'token_type',
+                'expires_in',
+            ])
+            ->assertJson([
+                'token_type' => 'bearer',
+                'expires_in' => 3600
+            ]);
+    }
+
+    /** @test */
+    public function user_cannot_retrieve_a_jwt()
+    {
+        $this->json('POST', '/api/v1/auth/login', [
+                'email' => 'anakin@skywalker.st',
+                'password' => 'Luk3'
+            ])
+            ->assertStatus(401)
+            ->assertJson([
+                'error' => 'Unauthorized'
+            ]);
+    }
+
+    /** @test */
+    public function user_can_be_authenticated_with_jwt()
+    {
+        $this->actingAs($this->anakin())
+            ->json('POST', '/api/v1/auth/me')
+            ->assertStatus(200)
+            ->assertJsonStructure([
+                'id',
+                'name',
+                'email',
+                'created_at',
+                'updated_at',
+            ])
+            ->assertJson([
+                'name' => 'Anakin',
+                'email' => 'anakin@skywalker.st'
+            ]);
+    }
+
+    /** @test */
+    public function user_must_be_authenticated()
+    {
+        $this->json('POST', '/api/v1/auth/me')
+            ->assertStatus(401)
+            ->assertJson([
+                'message' => 'Unauthenticated.'
+            ]);
+    }
+}
