@@ -48,17 +48,18 @@ class ExampleTest extends TestCase
     {
         $this->actingAs($this->anakin())
             ->json('POST', '/api/v1/auth/me')
-            ->assertStatus(200)
+            ->assertStatus(201)
             ->assertJsonStructure([
-                'id',
-                'name',
-                'email',
-                'created_at',
-                'updated_at',
+                'data' => [
+                    'name',
+                    'email',
+                ]
             ])
             ->assertJson([
-                'name' => 'Anakin',
-                'email' => 'anakin@skywalker.st'
+                'data' => [
+                    'name' => 'Anakin',
+                    'email' => 'anakin@skywalker.st'
+                ]
             ]);
     }
 

@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\V1\Auth;
 
 use App\Http\Controllers\Controller;
+use App\Http\Resources\UserResource;
 use App\User;
 use Illuminate\Foundation\Auth\RegistersUsers;
 use Illuminate\Http\Request;
@@ -72,6 +73,6 @@ class RegisterController extends Controller
      */
     protected function registered(Request $request, $user)
     {
-        return $user;
+        return new UserResource($user);
     }
 }
