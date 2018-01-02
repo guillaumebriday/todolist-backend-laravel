@@ -3,7 +3,7 @@ version: '3'
 services:
   todolist-server:
     build: ./provisioning
-    image: laravel-todolist
+    image: todolist-backend
     depends_on:
       - mysql
       - mysql-test
