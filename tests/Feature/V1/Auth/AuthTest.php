@@ -39,7 +39,9 @@ class ExampleTest extends TestCase
             ])
             ->assertStatus(401)
             ->assertJson([
-                'error' => 'Unauthorized'
+                'errors' => [
+                    'email' => ['These credentials do not match our records.']
+                ]
             ]);
     }
 
