@@ -2,6 +2,7 @@
 
 namespace App;
 
+use App\Scopes\AuthorScope;
 use Illuminate\Database\Eloquent\Model;
 
 class Task extends Model
