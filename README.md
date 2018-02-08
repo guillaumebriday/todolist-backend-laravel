@@ -5,7 +5,7 @@
 
 > Backend for https://github.com/guillaumebriday/todolist-frontend app, built for a serie of articles on my [blog](https://guillaumebriday.fr/).
 
-The purpose of this repository is to provide API with [Laravel](http://laravel.com/) and connecting JavaScript front-end frameworks like [Vue.js](https://vuejs.org) or other clients to them.
+The purpose of this repository is to provide API with [Laravel 5.6](http://laravel.com/) and connecting JavaScript front-end frameworks like [Vue.js](https://vuejs.org) or other clients to them.
 
 Beside Laravel, this project uses other tools like :
 
