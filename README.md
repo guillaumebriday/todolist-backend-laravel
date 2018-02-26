@@ -65,17 +65,17 @@ $ docker-compose run --rm --no-deps todolist-server php artisan package:discover
 Clients can access to the REST API. API requests require authentication via JWT. You can create a new one with you credentials.
 
 ```bash
-$ curl -X POST localhost/api/v1/auth/login -d "email=your_email&password=your_password"
+$ curl -X POST localhost:8000/api/v1/auth/login -d "email=your_email&password=your_password"
 ```
 
 Then, you can use this token either as url parameter or in Authorization header :
 
 ```bash
 # Url parameter
-curl -X POST http://localhost/api/v1/auth/me?token=your_jwt_token_here
+curl -X POST http://localhost:8000/api/v1/auth/me?token=your_jwt_token_here
 
 # Authorization Header
-curl -X POST --header "Authorization: Bearer your_jwt_token_here" http://localhost/api/v1/auth/me
+curl -X POST --header "Authorization: Bearer your_jwt_token_here" http://localhost:8000/api/v1/auth/me
 ```
 
 API are prefixed by ```api``` and the API version number like so ```v1```.
