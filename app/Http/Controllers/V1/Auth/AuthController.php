@@ -5,7 +5,6 @@ namespace App\Http\Controllers\V1\Auth;
 use App\Http\Controllers\Controller;
 use App\Http\Resources\UserResource;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Auth;
 
 class AuthController extends Controller
 {
@@ -33,15 +32,15 @@ class AuthController extends Controller
             'password' => 'required|string',
         ]);
 
-        if ($token = $this->guard()->attempt($credentials)) {
-            return $this->respondWithToken($token);
+        if (! $token = auth()->attempt($credentials)) {
+            return response()->json([
+                'errors' => [
+                    'email' => [__('auth.failed')]
+                ]
+            ], 401);
         }
 
-        return response()->json([
-            'errors' => [
-                'email' => [__('auth.failed')]
-            ]
-        ], 401);
+        return $this->respondWithToken($token);
     }
 
     /**
@@ -51,7 +50,7 @@ class AuthController extends Controller
      */
     public function me()
     {
-        return new UserResource($this->guard()->user());
+        return new UserResource(auth()->user());
     }
 
     /**
@@ -61,7 +60,7 @@ class AuthController extends Controller
      */
     public function logout()
     {
-        $this->guard()->logout();
+        auth()->logout();
 
         return response()->json(['message' => 'Successfully logged out']);
     }
@@ -73,7 +72,7 @@ class AuthController extends Controller
      */
     public function refresh()
     {
-        return $this->respondWithToken($this->guard()->refresh());
+        return $this->respondWithToken(auth()->refresh());
     }
 
     /**
@@ -88,17 +87,7 @@ class AuthController extends Controller
         return response()->json([
             'access_token' => $token,
             'token_type' => 'bearer',
-            'expires_in' => $this->guard()->factory()->getTTL() * 60
+            'expires_in' => auth()->factory()->getTTL() * 60
         ]);
-    }
-
-    /**
-     * Get the guard to be used during authentication.
-     *
-     * @return \Illuminate\Contracts\Auth\Guard
-     */
-    private function guard()
-    {
-        return Auth::guard();
     }
 }
