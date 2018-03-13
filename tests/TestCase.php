@@ -17,4 +17,23 @@ abstract class TestCase extends BaseTestCase
     {
         return factory(User::class)->states('anakin')->create($overrides);
     }
+
+    /**
+     * Return an user
+     * @return User
+     */
+    protected function user($overrides = [])
+    {
+        return factory(User::class)->create($overrides);
+    }
+
+    /**
+     * Acting as an user
+     */
+    protected function actingAsUser()
+    {
+        $this->actingAs($this->user());
+
+        return $this;
+    }
 }

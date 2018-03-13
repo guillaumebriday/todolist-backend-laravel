@@ -23,4 +23,8 @@ Route::prefix('v1')->namespace('V1')->group(function () {
         Route::post('refresh', 'AuthController@refresh');
         Route::post('me', 'AuthController@me');
     });
+
+    Route::middleware('auth:api')->group(function () {
+        Route::ApiResource('tasks', 'TasksController');
+    });
 });

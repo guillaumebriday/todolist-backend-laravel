@@ -60,6 +60,11 @@ Discover package
 $ docker-compose run --rm --no-deps todolist-server php artisan package:discover
 ```
 
+Generating fake data :
+```bash
+$ docker-compose run --rm todolist-server php artisan db:seed --class=DevDatabaseSeeder
+```
+
 ## Accessing the API
 
 Clients can access to the REST API. API requests require authentication via JWT. You can create a new one with you credentials.
