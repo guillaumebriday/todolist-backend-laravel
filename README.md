@@ -14,7 +14,7 @@ Beside Laravel, this project uses other tools like :
 - [tymon/jwt-auth](https://github.com/tymondesigns/jwt-auth)
 - [spatie/laravel-cors](https://github.com/spatie/laravel-cors)
 - [spatie/laravel-backup](https://github.com/spatie/laravel-backup)
-- [Redis](https://redis.io/)
+- [Pusher](https://pusher.com/)
 
 ## Installation
 
