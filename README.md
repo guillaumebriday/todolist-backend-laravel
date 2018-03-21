@@ -14,7 +14,7 @@ Beside Laravel, this project uses other tools like :
 - [tymon/jwt-auth](https://github.com/tymondesigns/jwt-auth)
 - [spatie/laravel-cors](https://github.com/spatie/laravel-cors)
 - [spatie/laravel-backup](https://github.com/spatie/laravel-backup)
-- [Redis](https://redis.io/)
+- [Pusher](https://pusher.com/)
 
 ## Installation
 
@@ -91,6 +91,18 @@ To list all the available routes for API :
 
 ```bash
 $ docker-compose run --rm --no-deps todolist-server php artisan route:list
+```
+
+## Broadcasting & WebSockets
+
+Before using WebSockets, you need to set the ```PUSHER``` related keys in your .env file.
+
+You could find this keys on [https://pusher.com/](https://pusher.com/).
+
+You also need to set the ```BROADCAST_DRIVER``` key :
+
+```
+BROADCAST_DRIVER=pusher
 ```
 
 ## More details
