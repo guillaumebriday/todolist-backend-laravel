@@ -33,6 +33,7 @@ return [
         'allow_headers' => [
             'Content-Type',
             'X-Auth-Token',
+            'X-Socket-Id',
             'Origin',
             'Authorization',
             'X-Requested-With',
