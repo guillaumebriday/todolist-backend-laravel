@@ -1,5 +1,7 @@
 <?php
 
+use App\Broadcasting\TaskChannel;
+
 /*
 |--------------------------------------------------------------------------
 | Broadcast Channels
@@ -11,6 +13,5 @@
 |
 */
 
-Broadcast::channel('App.User.{id}', function ($user, $id) {
-    return (int) $user->id === (int) $id;
-});
+Broadcast::routes(['middleware' => 'auth:api']);
+Broadcast::channel('App.User.{id}', TaskChannel::class);
