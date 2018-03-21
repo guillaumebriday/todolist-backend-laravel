@@ -93,6 +93,18 @@ To list all the available routes for API :
 $ docker-compose run --rm --no-deps todolist-server php artisan route:list
 ```
 
+## Broadcasting & WebSockets
+
+Before using WebSockets, you need to set the ```PUSHER``` related keys in your .env file.
+
+You could find this keys on [https://pusher.com/](https://pusher.com/).
+
+You also need to set the ```BROADCAST_DRIVER``` key :
+
+```
+BROADCAST_DRIVER=pusher
+```
+
 ## More details
 
 More details are available on my blog post : [https://guillaumebriday.fr/laravel-vuejs-faire-une-todo-list-partie-1-presentation-et-objectifs](https://guillaumebriday.fr/laravel-vuejs-faire-une-todo-list-partie-1-presentation-et-objectifs) (French).
