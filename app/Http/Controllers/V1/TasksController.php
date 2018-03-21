@@ -2,6 +2,9 @@
 
 namespace App\Http\Controllers\V1;
 
+use App\Events\TaskCreated;
+use App\Events\TaskDeleted;
+use App\Events\TaskUpdated;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\Task\TaskRequest;
 use App\Http\Requests\Task\UpdateTaskRequest;
@@ -42,11 +45,13 @@ class TasksController extends Controller
      */
     public function store(TaskRequest $request)
     {
-        return new TaskResource(
-            auth()->user()->tasks()->create(
-                request()->only('title', 'due_at')
-            )
+        $task = auth()->user()->tasks()->create(
+            request()->only('title', 'due_at')
         );
+
+        broadcast(new TaskCreated($task))->toOthers();
+
+        return new TaskResource($task);
     }
 
     /**
@@ -62,6 +67,8 @@ class TasksController extends Controller
             request()->only('title', 'due_at', 'deleted_at')
         );
 
+        broadcast(new TaskUpdated($task))->toOthers();
+
         return new TaskResource($task);
     }
 
@@ -74,6 +81,8 @@ class TasksController extends Controller
      */
     public function destroy(Request $request, Task $task)
     {
+        broadcast(new TaskDeleted($task))->toOthers();
+
         $task->delete();
 
         return response()->noContent();
