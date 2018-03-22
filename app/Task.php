@@ -50,4 +50,25 @@ class Task extends Model
     {
         return $this->belongsTo(User::class, 'user_id');
     }
+
+    /**
+     * Scope a query to only include completed tasks.
+     *
+     * @param \Illuminate\Database\Eloquent\Builder $query
+     * @return \Illuminate\Database\Eloquent\Builder
+     */
+    public function scopeCompleted($query)
+    {
+        return $query->whereNotNull('deleted_at');
+    }
+
+    /**
+     * Check if the task is completed
+     *
+     * @return boolean
+     */
+    public function isCompleted(): bool
+    {
+        return filled($this->deleted_at);
+    }
 }
