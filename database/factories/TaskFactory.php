@@ -8,14 +8,15 @@ $factory->define(Task::class, function (Faker $faker) {
     return [
         'title' => $faker->sentence,
         'due_at' => null,
+        'deleted_at' => null,
         'user_id' => function () {
             return factory(User::class)->create()->id;
         },
     ];
 });
 
-$factory->state(Task::class, 'schedule', function (Faker $faker) {
+$factory->state(Task::class, 'completed', function (Faker $faker) {
     return [
-        'due_at' => now()
+        'deleted_at' => now()
     ];
 });

@@ -4,6 +4,7 @@ namespace App\Http\Controllers\V1;
 
 use App\Events\TaskCreated;
 use App\Events\TaskDeleted;
+use App\Events\TasksDeleted;
 use App\Events\TaskUpdated;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\Task\TaskRequest;
@@ -84,6 +85,21 @@ class TasksController extends Controller
         broadcast(new TaskDeleted($task))->toOthers();
 
         $task->delete();
+
+        return response()->noContent();
+    }
+
+    /**
+     * Remove the all completed tasks from storage.
+     *
+     * @param  \Illuminate\Http\Request  $request
+     * @return \Illuminate\Http\Response
+     */
+    public function deleteCompletedTasks(Request $request)
+    {
+        broadcast(new TasksDeleted)->toOthers();
+
+        Task::completed()->delete();
 
         return response()->noContent();
     }

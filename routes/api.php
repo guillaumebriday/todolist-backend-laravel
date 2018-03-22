@@ -26,5 +26,6 @@ Route::prefix('v1')->namespace('V1')->group(function () {
 
     Route::middleware('auth:api')->group(function () {
         Route::ApiResource('tasks', 'TasksController');
+        Route::delete('tasks', 'TasksController@deleteCompletedTasks');
     });
 });

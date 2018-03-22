@@ -160,4 +160,19 @@ class TaskTest extends TestCase
 
         $this->assertDatabaseMissing('tasks', $task->toArray());
     }
+
+    /** @test */
+    public function user_can_delete_all_completed_tasks()
+    {
+        $anakin = $this->anakin();
+        $tasks = factory(Task::class, 2)->create(['user_id' => $anakin]);
+        $completedTasks = factory(Task::class, 2)->states('completed')->create(['user_id' => $anakin]);
+
+        $this->actingAs($anakin)
+            ->json('DELETE', '/api/v1/tasks')
+            ->assertStatus(204);
+
+        $this->assertEmpty(Task::completed()->get());
+        $this->assertCount(2, Task::all());
+    }
 }
