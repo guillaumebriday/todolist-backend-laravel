@@ -46,9 +46,7 @@ class TasksController extends Controller
      */
     public function store(TaskRequest $request)
     {
-        $task = auth()->user()->tasks()->create(
-            request()->only('title', 'due_at')
-        );
+        $task = auth()->user()->tasks()->create($request->validated());
 
         broadcast(new TaskCreated($task))->toOthers();
 
@@ -64,9 +62,7 @@ class TasksController extends Controller
      */
     public function update(UpdateTaskRequest $request, Task $task)
     {
-        $task->update(
-            request()->only('title', 'due_at', 'deleted_at')
-        );
+        $task->update($request->validated());
 
         broadcast(new TaskUpdated($task))->toOthers();
 

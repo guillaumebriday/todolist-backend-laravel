@@ -26,10 +26,10 @@ class RegisterController extends Controller
      */
     public function register(RegisterRequest $request)
     {
-        $user = User::create($request->only('name', 'email', 'password'));
-
         return $this->respondWithToken(
-            auth()->login($user)
+            auth()->login(
+                User::create($request->validated())
+            )
         );
     }
 }
