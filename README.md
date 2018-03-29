@@ -1,9 +1,9 @@
 # Todolist-backend Application
 
-[![Build Status](https://travis-ci.org/guillaumebriday/todolist-backend.svg?branch=master)](https://travis-ci.org/guillaumebriday/todolist-backend)
+[![Build Status](https://travis-ci.org/guillaumebriday/todolist-backend-laravel.svg?branch=master)](https://travis-ci.org/guillaumebriday/todolist-backend-laravel)
 [![Donate](https://img.shields.io/badge/Donate-PayPal-green.svg)](https://www.paypal.me/guillaumebriday)
 
-> Backend for https://github.com/guillaumebriday/todolist-frontend app, built for a serie of articles on my [blog](https://guillaumebriday.fr/).
+> Backend for https://github.com/guillaumebriday/todolist-frontend-vuejs app, built for a serie of articles on my [blog](https://guillaumebriday.fr/).
 
 The purpose of this repository is to provide API with [Laravel 5.6](http://laravel.com/) and connecting JavaScript front-end frameworks like [Vue.js](https://vuejs.org) or other clients to them.
 
@@ -24,7 +24,7 @@ Development environment requirements :
 
 Setting up your development environment on your local machine :
 ```
-$ git clone https://github.com/guillaumebriday/todolist-backend.git
+$ git clone https://github.com/guillaumebriday/todolist-backend-laravel.git
 $ cd todolist-backend
 $ cp .env.example .env
 $ docker-compose run --rm --no-deps todolist-server composer install
