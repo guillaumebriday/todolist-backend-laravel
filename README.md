@@ -39,6 +39,17 @@ You need to run the migrations :
 $ docker-compose run --rm todolist-server php artisan migrate
 ```
 
+Seed the database :
+```
+$ docker-compose run --rm todolist-server php artisan db:seed
+```
+
+This will create a new user that you can use to sign in :
+```
+Email : darthvader@deathstar.ds
+Password : 4nak1n
+```
+
 ## Useful commands
 Running tests :
 ```
