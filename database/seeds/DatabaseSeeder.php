@@ -13,7 +13,7 @@ class DatabaseSeeder extends Seeder
     public function run()
     {
         // Users
-        if (! User::where('email', 'darthvader@deathstar.ds')->exists()) {
+        if (User::where('email', 'darthvader@deathstar.ds')->doesntExist()) {
             User::create([
                 'name' => 'anakin',
                 'email' => 'darthvader@deathstar.ds',
