@@ -1,0 +1,19 @@
+---
+- name: Pull docker images
+  docker_image:
+    name: "{{ item }}"
+  with_items:
+    - mysql:latest
+    - nginx:latest
+    - php:7.2-fpm
+
+- name: Adding docker-compose.yml file
+  template:
+    src: ../templates/docker-compose.yml.j2
+    dest: /var/www/todolist-backend/docker-compose.yml
+    owner: vagrant
+    group: docker
+
+- name: Create the todolist-backend network
+  docker_network:
+    name: todolist-backend

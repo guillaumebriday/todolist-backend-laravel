@@ -1,0 +1,46 @@
+version: '3'
+
+services:
+  nginx:
+    image: nginx
+    restart: unless-stopped
+    networks:
+      - web
+      - todolist-backend
+    volumes:
+      - {{ app_dir }}/nginx.conf:/etc/nginx/conf.d/default.conf
+      - ./:/application
+    labels:
+      - "traefik.backend=todolist-backend"
+      - "traefik.frontend.rule=Host:{{ app_url }}"
+      - "traefik.docker.network=web"
+      - "traefik.enable=true"
+
+  todolist-server:
+    image: todolist-backend
+    restart: unless-stopped
+    networks:
+      - todolist-backend
+    depends_on:
+      - mysql
+    volumes:
+      - ./:/application
+      - /etc/localtime:/etc/localtime
+      - {{ app_dir }}/storage/logs:/application/storage/logs
+
+  mysql:
+    image: mysql
+    restart: unless-stopped
+    networks:
+      - todolist-backend
+    environment:
+      - MYSQL_DATABASE={{ db_database }}
+      - MYSQL_ROOT_PASSWORD={{ db_password }}
+    volumes:
+      - {{ app_dir }}/storage/db:/var/lib/mysql
+
+networks:
+  web:
+    external: true
+  todolist-backend:
+    external: true
