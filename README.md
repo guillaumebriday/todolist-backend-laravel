@@ -116,6 +116,62 @@ You also need to set the ```BROADCAST_DRIVER``` key :
 BROADCAST_DRIVER=pusher
 ```
 
+## Deploy in production
+
+You can serve your application with [nginx](https://nginx.org/) in production.
+
+You can deploy this application with [Ansible](https://www.ansible.com) and [Capistrano](http://capistranorb.com/).
+
+Just create an ```hosts``` file like the following one :
+
+```ini
+[webservers]
+example.com
+
+[all:vars]
+ansible_python_interpreter=/usr/bin/python3
+
+[webservers:vars]
+app_dir=change-me
+app_url=example.com
+
+app_key=generate-me
+jwt_secret=generate-me
+
+db_database=change-me
+db_username=root
+db_password=change-me
+
+mail_driver=smtp
+mail_host=smtp.example.com
+mail_port=25
+mail_username=change-me
+mail_password=change-me
+
+pusher_app_id=a1b2c3d4
+pusher_app_key=a1b2c3d4
+pusher_app_secret=a1b2c3d4
+```
+
+Setup the user you use on your server in the ```roles``` and in the ```config/deploy``` folders and the server's address.
+
+And then run :
+
+```bash
+$ ansible-playbook -i hosts playbook.yml
+```
+
+Now with [Capistrano](http://capistranorb.com/) :
+
+Before starting, change the configuration files with your informations, then run :
+
+```bash
+$ bundle install
+$ cap production deploy
+```
+
+The first deployment might fail because mysql is not fully loaded. In this case just deploy again.
+
 ## More details
 
 More details are available on my blog post : [https://guillaumebriday.fr/laravel-vuejs-faire-une-todo-list-partie-1-presentation-et-objectifs](https://guillaumebriday.fr/laravel-vuejs-faire-une-todo-list-partie-1-presentation-et-objectifs) (French).
