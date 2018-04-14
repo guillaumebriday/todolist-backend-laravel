@@ -1,7 +1,7 @@
 ---
-- name: add vagrant to the user groups docker and sudo
+- name: add default user to the user groups docker and sudo
   user:
-    name: vagrant
+    name: "{{ user }}"
     groups: sudo,docker
     state: present
 
@@ -9,22 +9,22 @@
   file:
     path: "{{ item }}"
     state: directory
-    owner: vagrant
-    group: docker
+    owner: "{{ user }}"
+    group: "{{ group }}"
   with_items:
-    - /var/www/todolist-backend
-    - /var/www/todolist-backend/storage
+    - "{{ app_dir }}"
+    - "{{ app_dir }}/storage"
 
 - name: Adding nginx file
   template:
     src: ../templates/nginx.conf.j2
-    dest: /var/www/todolist-backend/nginx.conf
-    owner: vagrant
-    group: docker
+    dest: "{{ app_dir }}/nginx.conf"
+    owner: "{{ user }}"
+    group: "{{ group }}"
 
 - name: Adding .env file
   template:
     src: ../templates/.env.j2
-    dest: /var/www/todolist-backend/.env
-    owner: vagrant
-    group: docker
+    dest: "{{ app_dir }}/.env"
+    owner: "{{ user }}"
+    group: "{{ group }}"

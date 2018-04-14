@@ -132,7 +132,6 @@ example.com
 ansible_python_interpreter=/usr/bin/python3
 
 [webservers:vars]
-app_dir=change-me
 app_url=example.com
 
 app_key=generate-me
@@ -151,9 +150,10 @@ mail_password=change-me
 pusher_app_id=a1b2c3d4
 pusher_app_key=a1b2c3d4
 pusher_app_secret=a1b2c3d4
+pusher_app_cluster=eu
 ```
 
-Setup the user you use on your server in the ```roles``` and in the ```config/deploy``` folders and the server's address.
+Setup your variables in the ```playbook.yml``` and in the ```config/deploy.rb``` files.
 
 And then run :
 
