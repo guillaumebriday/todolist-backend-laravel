@@ -24,6 +24,7 @@ class TaskTest extends TestCase
                     'id',
                     'title',
                     'due_at',
+                    'is_completed',
                     'author' => [
                         'id',
                         'name',
@@ -60,6 +61,7 @@ class TaskTest extends TestCase
                     'id' => $task->id,
                     'title' => $task->title,
                     'due_at' => null,
+                    'is_completed' => false,
                     'author' => [
                         'id' => $anakin->id,
                         'name' => $anakin->name,
@@ -80,7 +82,7 @@ class TaskTest extends TestCase
             ->json('PATCH', "/api/v1/tasks/{$task->id}", [
                 'title' => 'Get groceries',
                 'due_at' => now()->toDateTimeString(),
-                'deleted_at' => now()->toDateTimeString(),
+                'is_completed' => true,
             ])
             ->assertStatus(200)
             ->assertJsonStructure([
@@ -100,7 +102,7 @@ class TaskTest extends TestCase
                     'id' => $task->id,
                     'title' => 'Get groceries',
                     'due_at' => now()->toATOMString(),
-                    'deleted_at' => now()->toATOMString(),
+                    'is_completed' => true,
                     'author' => [
                         'id' => $anakin->id,
                         'name' => $anakin->name,
@@ -138,6 +140,7 @@ class TaskTest extends TestCase
                 'data' => [
                     'title' => 'Get groceries',
                     'due_at' => now()->toATOMString(),
+                    'is_completed' => false,
                     'author' => [
                         'id' => $anakin->id,
                         'name' => $anakin->name,

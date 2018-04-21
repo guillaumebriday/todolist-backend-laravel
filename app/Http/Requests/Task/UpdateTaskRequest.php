@@ -23,7 +23,7 @@ class UpdateTaskRequest extends TaskRequest
     {
         return array_merge(parent::rules(), [
             'title' => 'string|max:255',
-            'deleted_at' => 'nullable|date',
+            'is_completed' => 'boolean',
         ]);
     }
 }

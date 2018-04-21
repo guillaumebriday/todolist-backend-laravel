@@ -32,8 +32,8 @@ class TaskTest extends TestCase
         $NotCompletedTask = factory(Task::class)->create(['user_id' => $anakin->id]);
         $completedTask = factory(Task::class)->states('completed')->create(['user_id' => $anakin->id]);
 
-        $this->assertTrue($completedTask->isCompleted());
-        $this->assertFalse($NotCompletedTask->isCompleted());
+        $this->assertTrue($completedTask->is_completed);
+        $this->assertFalse($NotCompletedTask->is_completed);
     }
 
     /** @test */
@@ -47,7 +47,7 @@ class TaskTest extends TestCase
 
         $onlyCompleted = true;
         foreach (Task::completed()->get() as $task) {
-            $onlyCompleted = $task->isCompleted();
+            $onlyCompleted = $task->is_completed;
 
             if (! $onlyCompleted) {
                 break;

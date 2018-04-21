@@ -15,7 +15,7 @@ class Task extends Model
     protected $fillable = [
         'title',
         'due_at',
-        'deleted_at',
+        'is_completed',
         'user_id'
     ];
 
@@ -26,7 +26,7 @@ class Task extends Model
      */
     protected $casts = [
         'due_at' => 'datetime',
-        'deleted_at' => 'datetime'
+        'is_completed' => 'boolean'
     ];
 
     /**
@@ -59,16 +59,6 @@ class Task extends Model
      */
     public function scopeCompleted($query)
     {
-        return $query->whereNotNull('deleted_at');
-    }
-
-    /**
-     * Check if the task is completed
-     *
-     * @return boolean
-     */
-    public function isCompleted(): bool
-    {
-        return filled($this->deleted_at);
+        return $query->whereIsCompleted(true);
     }
 }

@@ -18,7 +18,7 @@ class TaskResource extends Resource
             'id' => $this->id,
             'title' => $this->title,
             'due_at' => optional($this->due_at)->toATOMString(),
-            'deleted_at' => optional($this->deleted_at)->toATOMString(),
+            'is_completed' => $this->is_completed ?? false,
             'author' => new UserResource($this->author),
         ];
     }
