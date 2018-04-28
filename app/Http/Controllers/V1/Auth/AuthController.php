@@ -4,6 +4,7 @@ namespace App\Http\Controllers\V1\Auth;
 
 use App\Http\Controllers\Controller;
 use App\Http\Resources\UserResource;
+use Illuminate\Http\JsonResponse;
 use Illuminate\Http\Request;
 
 class AuthController extends Controller
@@ -20,12 +21,8 @@ class AuthController extends Controller
 
     /**
      * Get a JWT token via given credentials.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     *
-     * @return \Illuminate\Http\JsonResponse
      */
-    public function login(Request $request)
+    public function login(Request $request): JsonResponse
     {
         $credentials = request()->validate([
             'email' => 'required|email',
@@ -45,20 +42,16 @@ class AuthController extends Controller
 
     /**
      * Get the authenticated User
-     *
-     * @return \Illuminate\Http\JsonResponse
      */
-    public function me()
+    public function me(): UserResource
     {
         return new UserResource(auth()->user());
     }
 
     /**
      * Log the user out (Invalidate the token)
-     *
-     * @return \Illuminate\Http\JsonResponse
      */
-    public function logout()
+    public function logout(): JsonResponse
     {
         auth()->logout();
 
@@ -67,10 +60,8 @@ class AuthController extends Controller
 
     /**
      * Refresh a token.
-     *
-     * @return \Illuminate\Http\JsonResponse
      */
-    public function refresh()
+    public function refresh(): JsonResponse
     {
         return $this->respondWithToken(auth()->refresh());
     }
