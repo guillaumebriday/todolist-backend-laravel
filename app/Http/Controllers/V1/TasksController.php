@@ -11,16 +11,16 @@ use App\Http\Requests\Task\TaskRequest;
 use App\Http\Requests\Task\UpdateTaskRequest;
 use App\Http\Resources\TaskResource;
 use App\Task;
+use Illuminate\Http\JsonResponse;
 use Illuminate\Http\Request;
+use Illuminate\Http\Resources\Json\ResourceCollection;
 
 class TasksController extends Controller
 {
     /**
      * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(): ResourceCollection
     {
         return TaskResource::collection(
             Task::all()
@@ -29,22 +29,16 @@ class TasksController extends Controller
 
     /**
      * Display the specified resource.
-     *
-     * @param  Task $task
-     * @return \Illuminate\Http\Response
      */
-    public function show(Task $task)
+    public function show(Task $task): TaskResource
     {
         return new TaskResource($task);
     }
 
     /**
      * Store a newly created resource in storage.
-     *
-     * @param  TaskRequest  $request
-     * @return \Illuminate\Http\Response
      */
-    public function store(TaskRequest $request)
+    public function store(TaskRequest $request): TaskResource
     {
         $task = auth()->user()->tasks()->create($request->validated());
 
@@ -55,12 +49,8 @@ class TasksController extends Controller
 
     /**
      * Update the specified resource in storage.
-     *
-     * @param  UpdateTaskRequest  $request
-     * @param  Task  $task
-     * @return \Illuminate\Http\Response
      */
-    public function update(UpdateTaskRequest $request, Task $task)
+    public function update(UpdateTaskRequest $request, Task $task): TaskResource
     {
         $task->update($request->validated());
 
@@ -71,12 +61,8 @@ class TasksController extends Controller
 
     /**
      * Remove the specified resource from storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  Task  $task
-     * @return \Illuminate\Http\Response
      */
-    public function destroy(Request $request, Task $task)
+    public function destroy(Request $request, Task $task): JsonResponse
     {
         broadcast(new TaskDeleted($task))->toOthers();
 
@@ -87,11 +73,8 @@ class TasksController extends Controller
 
     /**
      * Remove the all completed tasks from storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
      */
-    public function deleteCompletedTasks(Request $request)
+    public function deleteCompletedTasks(Request $request): JsonResponse
     {
         broadcast(new TasksDeleted)->toOthers();
 

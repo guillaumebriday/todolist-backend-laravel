@@ -2,6 +2,7 @@
 
 namespace App;
 
+use Illuminate\Database\Eloquent\Relations\HasMany;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 use Tymon\JWTAuth\Contracts\JWTSubject;
@@ -30,21 +31,16 @@ class User extends Authenticatable implements JWTSubject
 
     /**
      * Encrypt the user's password.
-     *
-     * @param string $passwword
-     * @return void
      */
-    public function setPasswordAttribute($password)
+    public function setPasswordAttribute(string $password): void
     {
         $this->attributes['password'] = bcrypt($password);
     }
 
     /**
      * Return the user's tasks
-     *
-     * @return \Illuminate\Database\Eloquent\Relations\HasMany
      */
-    public function tasks()
+    public function tasks(): HasMany
     {
         return $this->hasMany(Task::class);
     }
@@ -61,10 +57,8 @@ class User extends Authenticatable implements JWTSubject
 
     /**
      * Return a key value array, containing any custom claims to be added to the JWT.
-     *
-     * @return array
      */
-    public function getJWTCustomClaims()
+    public function getJWTCustomClaims(): array
     {
         return [];
     }
