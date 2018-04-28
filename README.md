@@ -81,7 +81,7 @@ $ docker-compose run --rm todolist-server php artisan db:seed --class=DevDatabas
 Clients can access to the REST API. API requests require authentication via JWT. You can create a new one with you credentials.
 
 ```bash
-$ curl -X POST localhost:8000/api/v1/auth/login -d "email=your_email&password=your_password"
+$ curl -X POST http://localhost:8000/api/v1/auth/login -d "email=your_email&password=your_password"
 ```
 
 Then, you can use this token either as url parameter or in Authorization header :
