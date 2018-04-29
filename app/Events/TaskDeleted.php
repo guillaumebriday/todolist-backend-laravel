@@ -2,7 +2,7 @@
 
 namespace App\Events;
 
-use App\Task;
+use App\Models\Task;
 use Illuminate\Broadcasting\InteractsWithSockets;
 use Illuminate\Broadcasting\PrivateChannel;
 use Illuminate\Contracts\Broadcasting\ShouldBroadcast;

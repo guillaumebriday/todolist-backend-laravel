@@ -1,6 +1,6 @@
 <?php
 
-use App\Task;
+use App\Models\Task;
 use Illuminate\Database\Seeder;
 
 class DevDatabaseSeeder extends Seeder

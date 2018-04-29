@@ -1,7 +1,7 @@
 <?php
 
-use App\Task;
-use App\User;
+use App\Models\Task;
+use App\Models\User;
 use Faker\Generator as Faker;
 
 $factory->define(Task::class, function (Faker $faker) {

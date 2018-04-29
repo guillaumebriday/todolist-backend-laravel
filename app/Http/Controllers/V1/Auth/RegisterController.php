@@ -4,7 +4,7 @@ namespace App\Http\Controllers\V1\Auth;
 
 use App\Http\Controllers\Controller;
 use App\Http\Requests\User\RegisterRequest;
-use App\User;
+use App\Models\User;
 use Illuminate\Http\JsonResponse;
 
 class RegisterController extends Controller

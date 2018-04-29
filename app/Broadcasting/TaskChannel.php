@@ -2,7 +2,7 @@
 
 namespace App\Broadcasting;
 
-use App\User;
+use App\Models\User;
 
 class TaskChannel
 {
