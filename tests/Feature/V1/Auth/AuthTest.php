@@ -49,7 +49,7 @@ class ExampleTest extends TestCase
     public function user_can_be_authenticated_with_jwt()
     {
         $this->actingAs($this->anakin())
-            ->json('POST', '/api/v1/auth/me')
+            ->json('GET', '/api/v1/auth/me')
             ->assertStatus(201)
             ->assertJsonStructure([
                 'data' => [
@@ -68,7 +68,7 @@ class ExampleTest extends TestCase
     /** @test */
     public function user_must_be_authenticated()
     {
-        $this->json('POST', '/api/v1/auth/me')
+        $this->json('GET', '/api/v1/auth/me')
             ->assertStatus(401)
             ->assertJson([
                 'message' => 'Unauthenticated.'

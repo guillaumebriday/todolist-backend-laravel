@@ -19,9 +19,9 @@ Route::prefix('v1')->namespace('V1')->group(function () {
 
         // JWT Routes
         Route::post('login', 'AuthController@login');
-        Route::post('logout', 'AuthController@logout');
+        Route::delete('logout', 'AuthController@logout');
         Route::post('refresh', 'AuthController@refresh');
-        Route::post('me', 'AuthController@me');
+        Route::get('me', 'AuthController@me');
     });
 
     Route::middleware('auth:api')->group(function () {
