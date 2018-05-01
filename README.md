@@ -53,7 +53,7 @@ Password : 4nak1n
 ## Useful commands
 Running tests :
 ```
-$ docker-compose run --rm todolist-server ./vendor/bin/phpunit
+$ docker-compose run --rm todolist-server ./vendor/bin/phpunit --stop-on-failure
 ```
 
 Running php-cs-fixer :
