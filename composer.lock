@@ -1,7 +1,7 @@
 {
     "_readme": [
         "This file locks the dependencies of your project to a known state",
-        "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
+        "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
     "content-hash": "b5ac4edfebba5b48e3e79cf71037f7db",
@@ -715,16 +715,16 @@
         },
         {
             "name": "league/flysystem",
-            "version": "1.0.44",
+            "version": "1.0.45",
             "source": {
                 "type": "git",
                 "url": "https://github.com/thephpleague/flysystem.git",
-                "reference": "168dbe519737221dc87d17385cde33073881fd02"
+                "reference": "a99f94e63b512d75f851b181afcdf0ee9ebef7e6"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/thephpleague/flysystem/zipball/168dbe519737221dc87d17385cde33073881fd02",
-                "reference": "168dbe519737221dc87d17385cde33073881fd02",
+                "url": "https://api.github.com/repos/thephpleague/flysystem/zipball/a99f94e63b512d75f851b181afcdf0ee9ebef7e6",
+                "reference": "a99f94e63b512d75f851b181afcdf0ee9ebef7e6",
                 "shasum": ""
             },
             "require": {
@@ -795,7 +795,7 @@
                 "sftp",
                 "storage"
             ],
-            "time": "2018-04-06T09:58:14+00:00"
+            "time": "2018-05-07T08:44:23+00:00"
         },
         {
             "name": "monolog/monolog",
@@ -1491,16 +1491,16 @@
         },
         {
             "name": "spatie/laravel-backup",
-            "version": "5.6.5",
+            "version": "5.6.6",
             "source": {
                 "type": "git",
                 "url": "https://github.com/spatie/laravel-backup.git",
-                "reference": "dc139dd381f38d9afcb6bbf861838acb1c838ef6"
+                "reference": "e40a94f5d1224356a002c1f74643782e684caa17"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/spatie/laravel-backup/zipball/dc139dd381f38d9afcb6bbf861838acb1c838ef6",
-                "reference": "dc139dd381f38d9afcb6bbf861838acb1c838ef6",
+                "url": "https://api.github.com/repos/spatie/laravel-backup/zipball/e40a94f5d1224356a002c1f74643782e684caa17",
+                "reference": "e40a94f5d1224356a002c1f74643782e684caa17",
                 "shasum": ""
             },
             "require": {
@@ -1511,7 +1511,7 @@
                 "illuminate/notifications": "~5.5.0|~5.6.0",
                 "illuminate/support": "~5.5.0|~5.6.0",
                 "league/flysystem": "^1.0.27",
-                "php": "^7.0",
+                "php": "^7.1",
                 "spatie/db-dumper": "^2.10",
                 "spatie/temporary-directory": "^1.1",
                 "symfony/finder": "^3.3|^4.0"
@@ -1560,20 +1560,20 @@
                 "laravel-backup",
                 "spatie"
             ],
-            "time": "2018-05-01T07:48:28+00:00"
+            "time": "2018-05-05T09:08:56+00:00"
         },
         {
             "name": "spatie/laravel-cors",
-            "version": "1.2.1",
+            "version": "1.2.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/spatie/laravel-cors.git",
-                "reference": "9131db5e4fa5daee7800c828f2a028950e0fe512"
+                "reference": "314899baf691dd4bbaf3cbbbcaf5aedb4b39a89b"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/spatie/laravel-cors/zipball/9131db5e4fa5daee7800c828f2a028950e0fe512",
-                "reference": "9131db5e4fa5daee7800c828f2a028950e0fe512",
+                "url": "https://api.github.com/repos/spatie/laravel-cors/zipball/314899baf691dd4bbaf3cbbbcaf5aedb4b39a89b",
+                "reference": "314899baf691dd4bbaf3cbbbcaf5aedb4b39a89b",
                 "shasum": ""
             },
             "require": {
@@ -1619,7 +1619,7 @@
                 "request",
                 "spatie"
             ],
-            "time": "2018-04-24T13:25:57+00:00"
+            "time": "2018-05-04T21:18:32+00:00"
         },
         {
             "name": "spatie/temporary-directory",
