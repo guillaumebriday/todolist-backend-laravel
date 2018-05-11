@@ -7,18 +7,16 @@ class DatabaseSeeder extends Seeder
 {
     /**
      * Run the database seeds.
-     *
-     * @return void
      */
-    public function run()
+    public function run(): void
     {
         // Users
-        if (User::where('email', 'darthvader@deathstar.ds')->doesntExist()) {
-            User::create([
+        User::firstOrCreate(
+            ['email' => 'darthvader@deathstar.ds'],
+            [
                 'name' => 'anakin',
-                'email' => 'darthvader@deathstar.ds',
                 'password' => '4nak1n'
-            ]);
-        }
+            ]
+        );
     }
 }

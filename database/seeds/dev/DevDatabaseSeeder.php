@@ -7,10 +7,8 @@ class DevDatabaseSeeder extends Seeder
 {
     /**
      * Run the database seeds.
-     *
-     * @return void
      */
-    public function run()
+    public function run(): void
     {
         // Tasks
         factory(Task::class, 10)->create();
