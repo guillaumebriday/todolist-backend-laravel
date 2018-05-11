@@ -1,4 +1,4 @@
-version: '3'
+version: "3"
 
 services:
   todolist-server:
@@ -13,7 +13,7 @@ services:
   mysql:
     image: mysql:5.7
     ports:
-      - '3306:3306'
+      - "3306:3306"
     environment:
       - MYSQL_ROOT_PASSWORD=secret
       - MYSQL_DATABASE=laravel-todolist
@@ -23,7 +23,7 @@ services:
   mysql-test:
     image: mysql:5.7
     ports:
-      - '3307:3306'
+      - "3307:3306"
     environment:
       - MYSQL_ROOT_PASSWORD=secret
       - MYSQL_DATABASE=testing
@@ -31,7 +31,7 @@ services:
   nginx:
     image: nginx
     ports:
-      - '8000:8000'
+      - "8000:8000"
     volumes:
       - ./provisioning/nginx.conf:/etc/nginx/conf.d/default.conf:cached
       - ./public:/application/public:cached
