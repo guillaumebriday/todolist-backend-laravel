@@ -10,16 +10,6 @@ use Illuminate\Http\JsonResponse;
 class RegisterController extends Controller
 {
     /**
-     * Create a new controller instance.
-     *
-     * @return void
-     */
-    public function __construct()
-    {
-        $this->middleware('guest');
-    }
-
-    /**
      * Handle a registration request for the application.
      */
     public function register(RegisterRequest $request): JsonResponse
