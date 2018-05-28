@@ -25,7 +25,7 @@ Development environment requirements :
 Setting up your development environment on your local machine :
 ```
 $ git clone https://github.com/guillaumebriday/todolist-backend-laravel.git
-$ cd todolist-backend
+$ cd todolist-backend-laravel
 $ cp .env.example .env
 $ docker-compose run --rm --no-deps todolist-server composer install
 $ docker-compose run --rm --no-deps todolist-server php artisan key:generate
