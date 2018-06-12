@@ -5,7 +5,7 @@ namespace Tests\Feature\V1\Auth;
 use Illuminate\Foundation\Testing\RefreshDatabase;
 use Tests\TestCase;
 
-class ExampleTest extends TestCase
+class AuthTest extends TestCase
 {
     use RefreshDatabase;
 
@@ -23,6 +23,7 @@ class ExampleTest extends TestCase
                 'access_token',
                 'token_type',
                 'expires_in',
+                'user_id',
             ])
             ->assertJson([
                 'token_type' => 'bearer',
