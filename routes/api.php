@@ -25,6 +25,7 @@ Route::prefix('v1')->namespace('V1')->group(function () {
             Route::get('me', 'AuthController@me');
         });
 
+        Route::ApiResource('users', 'UsersController')->only(['update', 'destroy'])->middleware('can:manage,user');
         Route::ApiResource('tasks', 'TasksController');
         Route::delete('tasks', 'TasksController@deleteCompletedTasks');
     });
