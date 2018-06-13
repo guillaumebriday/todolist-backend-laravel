@@ -114,6 +114,48 @@ class TaskTest extends TestCase
     }
 
     /** @test */
+    public function user_can_complete_a_task_without_updating_title()
+    {
+        $anakin = $this->anakin();
+        $task = factory(Task::class)->create(['user_id' => $anakin]);
+
+        $this->actingAs($anakin)
+            ->json('PATCH', "/api/v1/tasks/{$task->id}", [
+                'is_completed' => true,
+            ])
+            ->assertStatus(200)
+            ->assertJsonStructure([
+                'data' => [
+                    'id',
+                    'title',
+                    'due_at',
+                    'author' => [
+                        'id',
+                        'name',
+                        'email'
+                    ]
+                ],
+            ])
+            ->assertJson([
+                'data' => [
+                    'id' => $task->id,
+                    'title' => $task->title,
+                    'due_at' => $task->due_at,
+                    'is_completed' => true,
+                    'author' => [
+                        'id' => $anakin->id,
+                        'name' => $anakin->name,
+                        'email' => $anakin->email
+                    ]
+                ]
+            ])
+            ->assertJsonCount(1);
+
+        $this->assertEquals($task->title, $task->refresh()->title);
+        $this->assertTrue($task->is_completed);
+    }
+
+    /** @test */
     public function user_can_create_a_task()
     {
         $anakin = $this->anakin();
