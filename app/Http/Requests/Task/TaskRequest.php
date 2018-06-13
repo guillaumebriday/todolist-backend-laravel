@@ -24,6 +24,7 @@ class TaskRequest extends FormRequest
         return [
             'title' => 'required|string|max:255',
             'due_at' => 'nullable|date',
+            'is_completed' => 'boolean',
         ];
     }
 }

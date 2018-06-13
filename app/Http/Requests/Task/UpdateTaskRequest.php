@@ -21,7 +21,6 @@ class UpdateTaskRequest extends TaskRequest
     {
         return array_merge(parent::rules(), [
             'title' => 'string|max:255',
-            'is_completed' => 'boolean',
         ]);
     }
 }
