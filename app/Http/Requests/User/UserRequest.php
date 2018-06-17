@@ -34,7 +34,7 @@ class UserRequest extends FormRequest
                 'required_with:password',
                 new CurrentPassword
             ],
-            'password' => 'confirmed'
+            'password' => 'string|min:6|confirmed'
         ];
     }
 }
