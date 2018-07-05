@@ -19,7 +19,7 @@ Beside Laravel, this project uses other tools like :
 ## Installation
 
 Development environment requirements :
-- [Docker](https://www.docker.com)
+- [Docker](https://www.docker.com) >= 17.06 CE
 - [Docker Compose](https://docs.docker.com/compose/install/)
 
 Setting up your development environment on your local machine :
