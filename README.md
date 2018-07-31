@@ -122,35 +122,10 @@ You can serve your application with [nginx](https://nginx.org/) in production.
 
 You can deploy this application with [Ansible](https://www.ansible.com) and [Capistrano](http://capistranorb.com/).
 
-Just create an ```hosts``` file like the following one :
+Copy the hosts example file and change the values to your needs :
 
-```ini
-[webservers]
-example.com
-
-[all:vars]
-ansible_python_interpreter=/usr/bin/python3
-
-[webservers:vars]
-app_url=example.com
-
-app_key=generate-me
-jwt_secret=generate-me
-
-db_database=change-me
-db_username=root
-db_password=change-me
-
-mail_driver=smtp
-mail_host=smtp.example.com
-mail_port=25
-mail_username=change-me
-mail_password=change-me
-
-pusher_app_id=a1b2c3d4
-pusher_app_key=a1b2c3d4
-pusher_app_secret=a1b2c3d4
-pusher_app_cluster=eu
+```bash
+$ cp hosts.example hosts
 ```
 
 Setup your variables in the ```playbook.yml``` and in the ```config/deploy.rb``` files.
