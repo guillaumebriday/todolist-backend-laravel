@@ -147,6 +147,18 @@ $ cap production deploy
 
 The first deployment might fail because mysql is not fully loaded. In this case just deploy again.
 
+## Consume the API
+
+The application is available on [https://todolist-backend.guillaumebriday.xyz/api/v1/](https://todolist-backend.guillaumebriday.xyz/api/v1/).
+
+You can consume the API with any client.
+
+Some examples of projects who use this API:
++ [https://github.com/guillaumebriday/todolist-frontend-vuejs](https://github.com/guillaumebriday/todolist-frontend-vuejs) (Vue.js)
++ [https://github.com/dualshote/todolist-angular](https://github.com/dualshote/todolist-angular) (Angular)
+
+Don't forget to let me know if you want to add your project to this list !
+
 ## More details
 
 More details are available on my blog post : [https://guillaumebriday.fr/laravel-vuejs-faire-une-todo-list-partie-1-presentation-et-objectifs](https://guillaumebriday.fr/laravel-vuejs-faire-une-todo-list-partie-1-presentation-et-objectifs) (French).
