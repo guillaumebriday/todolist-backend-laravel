@@ -25,7 +25,7 @@ services:
       - mysql
     volumes:
       - ./:/application
-      - /etc/localtime:/etc/localtime
+      - /etc/localtime:/etc/localtime:ro
       - {{ app_dir }}/storage/logs:/application/storage/logs
 
   mysql:
