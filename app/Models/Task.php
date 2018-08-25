@@ -6,6 +6,7 @@ use App\Scopes\AuthorScope;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
+use Illuminate\Support\Carbon;
 
 class Task extends Model
 {
@@ -41,6 +42,16 @@ class Task extends Model
         parent::boot();
 
         static::addGlobalScope(new AuthorScope);
+    }
+
+    /**
+     * Set the task's due_at date in UTC.
+     */
+    public function setDueAtAttribute(?string $carbon): void
+    {
+        if (filled($carbon)) {
+            $this->attributes['due_at'] = Carbon::createFromTimestampUTC(strtotime($carbon));
+        }
     }
 
     /**
