@@ -156,14 +156,14 @@ class TaskTest extends TestCase
     }
 
     /** @test */
-    public function user_can_create_a_task()
+    public function user_can_create_a_task_with_timezone()
     {
         $anakin = $this->anakin();
 
         $this->actingAs($anakin)
             ->json('POST', "/api/v1/tasks", [
                 'title' => 'Get groceries',
-                'due_at' => now()->toDateTimeString()
+                'due_at' => '2018-08-25T12:00:00+02:00'
             ])
             ->assertStatus(201)
             ->assertJsonStructure([
@@ -181,7 +181,7 @@ class TaskTest extends TestCase
             ->assertJson([
                 'data' => [
                     'title' => 'Get groceries',
-                    'due_at' => now()->toATOMString(),
+                    'due_at' => '2018-08-25T10:00:00+00:00',
                     'is_completed' => false,
                     'author' => [
                         'id' => $anakin->id,
@@ -191,6 +191,24 @@ class TaskTest extends TestCase
                 ]
             ])
             ->assertJsonCount(1);
+    }
+
+    /** @test */
+    public function user_can_create_a_task_without_timezone()
+    {
+        $anakin = $this->anakin();
+
+        $this->actingAs($anakin)
+            ->json('POST', "/api/v1/tasks", [
+                'title' => 'Get groceries',
+                'due_at' => '2018-08-25 12:00:00'
+            ])
+            ->assertStatus(201)
+            ->assertJson([
+                'data' => [
+                    'due_at' => '2018-08-25T12:00:00+00:00'
+                ]
+            ]);
     }
 
     /** @test */
