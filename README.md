@@ -104,6 +104,8 @@ To list all the available routes for API :
 $ docker-compose run --rm --no-deps todolist-server php artisan route:list
 ```
 
+You can import my [Insomnia](https://insomnia.rest/) workspace configured to work with the API : `.insomnia/todolist-backend-laravel.json`.
+
 ## Broadcasting & WebSockets
 
 Before using WebSockets, you need to set the ```PUSHER``` related keys in your .env file.
