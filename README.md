@@ -157,7 +157,7 @@ You can consume the API with any client.
 
 Some examples of projects who use this API:
 + [https://github.com/guillaumebriday/todolist-frontend-vuejs](https://github.com/guillaumebriday/todolist-frontend-vuejs) (Vue.js)
-+ [https://github.com/dualshote/todolist-angular](https://github.com/dualshote/todolist-angular) (Angular)
++ [https://github.com/benoitrongeard/todolist-angular](https://github.com/benoitrongeard/todolist-angular) (Angular 6)
 
 Don't forget to let me know if you want to add your project to this list !
 
