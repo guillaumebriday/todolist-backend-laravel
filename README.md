@@ -5,7 +5,7 @@
 
 > Backend for https://github.com/guillaumebriday/todolist-frontend-vuejs app, built for a serie of articles on my [blog](https://guillaumebriday.fr/).
 
-The purpose of this repository is to provide API with [Laravel 5.6](http://laravel.com/) and connecting JavaScript front-end frameworks like [Vue.js](https://vuejs.org) or other clients to them.
+The purpose of this repository is to provide API with [Laravel 5.7](http://laravel.com/) and connecting JavaScript front-end frameworks like [Vue.js](https://vuejs.org) or other clients to them.
 
 Beside Laravel, this project uses other tools like :
 
@@ -53,7 +53,7 @@ Password : 4nak1n
 ## Useful commands
 Running tests :
 ```
-$ docker-compose run --rm todolist-server ./vendor/bin/phpunit --stop-on-failure
+$ docker-compose run --rm todolist-server ./vendor/bin/phpunit --cache-result --order-by=defects --stop-on-defect
 ```
 
 Running php-cs-fixer :
