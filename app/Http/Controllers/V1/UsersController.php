@@ -6,8 +6,8 @@ use App\Http\Controllers\Controller;
 use App\Http\Requests\User\UserRequest;
 use App\Http\Resources\UserResource;
 use App\Models\User;
-use Illuminate\Http\JsonResponse;
 use Illuminate\Http\Request;
+use Illuminate\Http\Response;
 use Illuminate\Support\Facades\DB;
 
 class UsersController extends Controller
@@ -25,7 +25,7 @@ class UsersController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(Request $request, User $user): JsonResponse
+    public function destroy(Request $request, User $user): Response
     {
         DB::transaction(function () use ($user) {
             $user->tasks()->delete();
