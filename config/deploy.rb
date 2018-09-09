@@ -1,8 +1,7 @@
 # config valid for current version and patch releases of Capistrano
 lock "~> 3.10.1"
 
-server '192.168.50.4',
-      user: 'vagrant',
+server 'change-me',
       roles: %w{app db web}
 
 set :application, "todolist-backend"
