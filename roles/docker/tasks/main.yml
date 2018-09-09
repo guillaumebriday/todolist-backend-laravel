@@ -11,8 +11,6 @@
   template:
     src: ../templates/docker-compose.yml.j2
     dest: "{{ app_dir }}/docker-compose.yml"
-    owner: "{{ user }}"
-    group: "{{ group }}"
 
 - name: Create the todolist-backend network
   docker_network:
