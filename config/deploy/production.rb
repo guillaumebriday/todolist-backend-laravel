@@ -4,6 +4,8 @@ after 'deploy:updated', 'template:env'
 
 after 'deploy:updated', 'composer:install'
 
+after 'deploy:updated', 'user:storage'
+
 after 'deploy:updated', 'docker:stop'
 
 after 'deploy:updated', 'artisan:migrate'
