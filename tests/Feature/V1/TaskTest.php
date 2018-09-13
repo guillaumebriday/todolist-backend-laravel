@@ -212,6 +212,27 @@ class TaskTest extends TestCase
     }
 
     /** @test */
+    public function user_can_remove_the_due_at_date()
+    {
+        $anakin = $this->anakin();
+        $task = factory(Task::class)->create([
+            'user_id' => $anakin,
+            'due_at' => now()
+        ]);
+
+        $this->actingAs($anakin)
+            ->json('PATCH', "/api/v1/tasks/{$task->id}", [
+                'due_at' => null,
+            ])
+            ->assertStatus(200)
+            ->assertJson([
+                'data' => [
+                    'due_at' => null
+                ]
+            ]);
+    }
+
+    /** @test */
     public function user_can_delete_a_task()
     {
         $anakin = $this->anakin();
