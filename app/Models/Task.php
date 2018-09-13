@@ -49,6 +49,8 @@ class Task extends Model
      */
     public function setDueAtAttribute(?string $carbon): void
     {
+        $this->attributes['due_at'] = null;
+
         if (filled($carbon)) {
             $this->attributes['due_at'] = Carbon::createFromTimestampUTC(strtotime($carbon));
         }
