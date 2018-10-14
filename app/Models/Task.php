@@ -52,7 +52,7 @@ class Task extends Model
         $this->attributes['due_at'] = null;
 
         if (filled($carbon)) {
-            $this->attributes['due_at'] = Carbon::createFromTimestampUTC(strtotime($carbon));
+            $this->attributes['due_at'] = Carbon::parse($carbon)->setTimezone("UTC");
         }
     }
 
