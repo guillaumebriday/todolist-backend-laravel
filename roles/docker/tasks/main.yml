@@ -15,3 +15,16 @@
 - name: Create the todolist-backend network
   docker_network:
     name: todolist-backend
+
+- name: Create the mysql container
+  docker_container:
+    name: todolist-db
+    image: mysql
+    restart_policy: unless-stopped
+    networks:
+      - name: todolist-backend
+    volumes:
+      - "{{ app_dir }}/storage/db:/var/lib/mysql"
+    env:
+      MYSQL_DATABASE: "{{ db_database }}"
+      MYSQL_ROOT_PASSWORD: "{{ db_password }}"
