@@ -49,9 +49,12 @@ class AuthTest extends TestCase
     /** @test */
     public function user_can_be_authenticated_with_jwt()
     {
-        $this->actingAs($this->anakin())
+        $anakin = $this->anakin();
+        $anakin->wasRecentlyCreated = false;
+
+        $this->actingAs($anakin)
             ->json('GET', '/api/v1/auth/me')
-            ->assertStatus(201)
+            ->assertStatus(200)
             ->assertJsonStructure([
                 'data' => [
                     'name',
