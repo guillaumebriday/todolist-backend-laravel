@@ -3,7 +3,7 @@
   docker_image:
     name: "{{ item }}"
   with_items:
-    - mysql:latest
+    - mysql:8
     - nginx:latest
     - php:7.2-fpm
 
@@ -19,7 +19,7 @@
 - name: Create the mysql container
   docker_container:
     name: todolist-db
-    image: mysql
+    image: mysql:8
     restart_policy: unless-stopped
     networks:
       - name: todolist-backend
