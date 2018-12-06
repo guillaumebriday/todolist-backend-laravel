@@ -18,8 +18,5 @@ RUN docker-php-ext-install pdo_mysql gd mbstring zip opcache
 # Installing composer
 RUN curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin --filename=composer
 
-# Setting locales
-RUN echo fr_FR.UTF-8 UTF-8 > /etc/locale.gen && locale-gen
-
 # Changing Workdir
 WORKDIR /application
