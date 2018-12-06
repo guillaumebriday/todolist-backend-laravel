@@ -4,7 +4,7 @@ namespace :docker do
     on roles(:app) do
       set :previous_release_path, previous_release
       within release_path do
-        execute :docker, :build, '-t', fetch(:application), "#{release_path}/provisioning"
+        execute :docker, :build, '-t', fetch(:application), "#{release_path}/.cloud/docker"
       end
     end
   end
