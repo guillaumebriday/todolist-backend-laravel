@@ -122,7 +122,7 @@ BROADCAST_DRIVER=pusher
 
 You can serve your application with [nginx](https://nginx.org/) in production.
 
-You can deploy this application with [Ansible](https://www.ansible.com) and [Capistrano](http://capistranorb.com/).
+You can deploy this application with [Ansible](https://www.ansible.com).
 
 Copy the hosts example file and change the values to your needs :
 
@@ -130,24 +130,13 @@ Copy the hosts example file and change the values to your needs :
 $ cp hosts.example hosts
 ```
 
-Setup your variables in the ```playbook.yml``` and in the ```config/deploy.rb``` files.
+Setup your variables in the ```playbook.yml```.
 
 And then run :
 
 ```bash
 $ ansible-playbook -i hosts playbook.yml
 ```
-
-Now with [Capistrano](http://capistranorb.com/) :
-
-Before starting, change the configuration files with your informations, then run :
-
-```bash
-$ bundle install
-$ cap production deploy
-```
-
-The first deployment might fail because mysql is not fully loaded. In this case just deploy again.
 
 ## Consume the API
 

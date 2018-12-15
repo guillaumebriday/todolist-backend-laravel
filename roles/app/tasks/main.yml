@@ -6,11 +6,6 @@
   with_items:
     - "{{ app_dir }}"
 
-- name: Adding nginx file
-  template:
-    src: ../templates/nginx.conf.j2
-    dest: "{{ app_dir }}/nginx.conf"
-
 - name: Adding .env file
   template:
     src: ../templates/.env.j2
