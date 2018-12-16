@@ -138,6 +138,20 @@ And then run :
 $ ansible-playbook -i hosts playbook.yml
 ```
 
+Build the images :
+```bash
+$ docker build -f .cloud/docker/Dockerfile.prod --target application -t todolist-backend-laravel-application .
+
+$ docker build -f .cloud/docker/Dockerfile.prod --target nginx -t todolist-backend-laravel-nginx .
+```
+
+Run the containers :
+```bash
+$ docker run --rm -it --name todolist-server --env-file .env --network todolist-backend todolist-backend-laravel-application
+
+$ docker run --rm -it -p 8000:8000 --network todolist-backend todolist-backend-laravel-nginx
+```
+
 ## Consume the API
 
 The application is available on [https://todolist-backend.guillaumebriday.xyz/api/v1/](https://todolist-backend.guillaumebriday.xyz/api/v1/).
