@@ -1,6 +1,6 @@
 # Todolist-backend Application
 
-[![Build Status](https://travis-ci.org/guillaumebriday/todolist-backend-laravel.svg?branch=master)](https://travis-ci.org/guillaumebriday/todolist-backend-laravel)
+[![pipeline status](https://gitlab.com/guillaumebriday/todolist-backend-laravel/badges/master/pipeline.svg)](https://gitlab.com/guillaumebriday/todolist-backend-laravel/commits/master)
 [![Donate](https://img.shields.io/badge/Donate-PayPal-green.svg)](https://www.paypal.me/guillaumebriday)
 
 > Backend for https://github.com/guillaumebriday/todolist-frontend-vuejs app, built for a serie of articles on my [blog](https://guillaumebriday.fr/).
@@ -122,7 +122,7 @@ BROADCAST_DRIVER=pusher
 
 You can serve your application with [nginx](https://nginx.org/) in production.
 
-You can deploy this application with [Ansible](https://www.ansible.com) and [Capistrano](http://capistranorb.com/).
+You can deploy this application with [Ansible](https://www.ansible.com).
 
 Copy the hosts example file and change the values to your needs :
 
@@ -130,7 +130,7 @@ Copy the hosts example file and change the values to your needs :
 $ cp hosts.example hosts
 ```
 
-Setup your variables in the ```playbook.yml``` and in the ```config/deploy.rb``` files.
+Setup your variables in the ```playbook.yml```.
 
 And then run :
 
@@ -138,20 +138,23 @@ And then run :
 $ ansible-playbook -i hosts playbook.yml
 ```
 
-Now with [Capistrano](http://capistranorb.com/) :
-
-Before starting, change the configuration files with your informations, then run :
-
+Build the images :
 ```bash
-$ bundle install
-$ cap production deploy
+$ docker build -f .cloud/docker/Dockerfile.prod --target application -t todolist-backend-laravel-application .
+
+$ docker build -f .cloud/docker/Dockerfile.prod --target nginx -t todolist-backend-laravel-nginx .
 ```
 
-The first deployment might fail because mysql is not fully loaded. In this case just deploy again.
+Run the containers :
+```bash
+$ docker run --rm -it --name todolist-server --link some-mysql:mysql --env-file .env --network todolist-backend todolist-backend-laravel-application
+
+$ docker run --rm -it -p 8000:8000 --network todolist-backend todolist-backend-laravel-nginx
+```
 
 ## Consume the API
 
-The application is available on [https://todolist-backend.guillaumebriday.xyz/api/v1/](https://todolist-backend.guillaumebriday.xyz/api/v1/).
+The application is available on [https://todolist-api.guillaumebriday.xyz/api/v1/](https://todolist-api.guillaumebriday.xyz/api/v1/).
 
 You can consume the API with any client.
 
