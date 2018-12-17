@@ -1,6 +1,6 @@
 # Todolist-backend Application
 
-[![Build Status](https://travis-ci.org/guillaumebriday/todolist-backend-laravel.svg?branch=master)](https://travis-ci.org/guillaumebriday/todolist-backend-laravel)
+[![pipeline status](https://gitlab.com/guillaumebriday/todolist-backend-laravel/badges/master/pipeline.svg)](https://gitlab.com/guillaumebriday/todolist-backend-laravel/commits/master)
 [![Donate](https://img.shields.io/badge/Donate-PayPal-green.svg)](https://www.paypal.me/guillaumebriday)
 
 > Backend for https://github.com/guillaumebriday/todolist-frontend-vuejs app, built for a serie of articles on my [blog](https://guillaumebriday.fr/).
@@ -147,14 +147,14 @@ $ docker build -f .cloud/docker/Dockerfile.prod --target nginx -t todolist-backe
 
 Run the containers :
 ```bash
-$ docker run --rm -it --name todolist-server --env-file .env --network todolist-backend todolist-backend-laravel-application
+$ docker run --rm -it --name todolist-server --link some-mysql:mysql --env-file .env --network todolist-backend todolist-backend-laravel-application
 
 $ docker run --rm -it -p 8000:8000 --network todolist-backend todolist-backend-laravel-nginx
 ```
 
 ## Consume the API
 
-The application is available on [https://todolist-backend.guillaumebriday.xyz/api/v1/](https://todolist-backend.guillaumebriday.xyz/api/v1/).
+The application is available on [https://todolist-api.guillaumebriday.xyz/api/v1/](https://todolist-api.guillaumebriday.xyz/api/v1/).
 
 You can consume the API with any client.
 
