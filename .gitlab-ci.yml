@@ -45,16 +45,24 @@ php-cs-fixer:
     - vendor/bin/php-cs-fixer fix --config=.php_cs --verbose --dry-run --diff
 
 # Stage: Build
-build_image:
+.setup_build_env: &setup_build_env
   stage: build
   image: docker:stable
   services:
     - docker:dind
+
+build_application_image:
+  <<: *setup_build_env
   script:
     - docker build -f .cloud/docker/Dockerfile.prod --target application -t ${IMAGE_TAG_APPLICATION} .
-    - docker build -f .cloud/docker/Dockerfile.prod --target nginx -t ${IMAGE_TAG_NGINX} .
     - docker login -u gitlab-ci-token -p ${CI_JOB_TOKEN} ${CI_REGISTRY}
     - docker push ${IMAGE_TAG_APPLICATION}
+
+build_nginx_image:
+  <<: *setup_build_env
+  script:
+    - docker build -f .cloud/docker/Dockerfile.prod --target nginx -t ${IMAGE_TAG_NGINX} .
+    - docker login -u gitlab-ci-token -p ${CI_JOB_TOKEN} ${CI_REGISTRY}
     - docker push ${IMAGE_TAG_NGINX}
 
 # Stage: deploy
@@ -82,12 +90,10 @@ deploy_prod:
 
     # start new containers
     - ssh root@guillaumebriday.xyz \
-      "docker run --rm --name todolist-server --network todolist-backend --env-file /var/www/todolist-backend/.env -d ${IMAGE_TAG_APPLICATION}"
+      "docker run --rm --name todolist-server --link todolist-db --env-file /var/www/todolist-backend/.env -d ${IMAGE_TAG_APPLICATION}"
 
     - ssh root@guillaumebriday.xyz \
-      "docker create --rm --name todolist-nginx --network web -l traefik.frontend.rule=Host:todolist-api.guillaumebriday.xyz ${IMAGE_TAG_NGINX}"
-    - ssh root@guillaumebriday.xyz "docker network connect todolist-backend todolist-nginx"
-    - ssh root@guillaumebriday.xyz "docker start todolist-nginx"
+      "docker run --rm -d --name todolist-nginx --link todolist-server -l traefik.frontend.rule=Host:todolist-api.guillaumebriday.xyz ${IMAGE_TAG_NGINX}"
 
   only:
     - master
