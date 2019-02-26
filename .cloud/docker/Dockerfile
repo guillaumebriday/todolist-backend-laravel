@@ -1,4 +1,4 @@
-FROM php:7.2-fpm
+FROM php:7.3-fpm
 LABEL maintainer="hello@guillaumebriday.fr"
 
 # Installing dependencies
@@ -6,6 +6,7 @@ RUN apt-get update && apt-get install -y \
     build-essential \
     mysql-client \
     libpng-dev \
+    libzip-dev \
     locales \
     zip
 

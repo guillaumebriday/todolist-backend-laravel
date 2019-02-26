@@ -5,7 +5,7 @@
   with_items:
     - mysql:8
     - nginx:latest
-    - php:7.2-fpm
+    - php:7.3-fpm
 
 - name: Adding docker-compose.yml file
   template:
