@@ -12,6 +12,7 @@ services:
 
   mysql:
     image: mysql:8
+    command: --default-authentication-plugin=mysql_native_password
     ports:
       - "3306:3306"
     environment:
@@ -22,6 +23,7 @@ services:
 
   mysql-test:
     image: mysql:8
+    command: --default-authentication-plugin=mysql_native_password
     ports:
       - "3307:3306"
     environment:
