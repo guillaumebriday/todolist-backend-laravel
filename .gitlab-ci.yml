@@ -50,6 +50,8 @@ php-cs-fixer:
   image: docker:stable
   services:
     - docker:dind
+  only:
+    - master
 
 build_application_image:
   <<: *setup_build_env
