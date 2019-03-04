@@ -9,6 +9,8 @@ abstract class TestCase extends BaseTestCase
 {
     use CreatesApplication;
 
+    public $mockConsoleOutput = false;
+
     /**
      * Return an user with the anakin state
      * @return User

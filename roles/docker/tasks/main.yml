@@ -5,7 +5,7 @@
   with_items:
     - mysql:8
     - nginx:latest
-    - php:7.2-fpm
+    - php:7.3-fpm
 
 - name: Adding docker-compose.yml file
   template:
@@ -21,6 +21,7 @@
     name: todolist-db
     image: mysql:8
     restart_policy: unless-stopped
+    command: "--default-authentication-plugin=mysql_native_password"
     networks:
       - name: todolist-backend
     volumes:
