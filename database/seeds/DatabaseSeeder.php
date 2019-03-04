@@ -15,7 +15,7 @@ class DatabaseSeeder extends Seeder
             ['email' => 'darthvader@deathstar.ds'],
             [
                 'name' => 'anakin',
-                'password' => '4nak1n'
+                'password' => '4nak1n5kyw4lk3r'
             ]
         );
     }
