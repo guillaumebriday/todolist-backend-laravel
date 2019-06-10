@@ -1,0 +1,16 @@
+{
+  "name": "todolist-docs",
+  "description": "Todolist docs",
+  "version": "1.0.0",
+  "author": "Guillaume Briday <guillaumebriday@gmail.com>",
+  "license": "MIT",
+  "private": true,
+  "scripts": {
+    "dev": "vuepress dev docs",
+    "build": "vuepress build docs"
+  },
+  "dependencies": {
+    "@vuepress/plugin-google-analytics": "^1.0.1",
+    "vuepress": "^1.0.1"
+  }
+}
