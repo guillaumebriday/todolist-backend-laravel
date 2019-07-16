@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "43926a735f3c3a4f773d74c3d97d0ed8",
+    "content-hash": "34a58a87feb793d1098b75e92b3dcb4b",
     "packages": [
         {
             "name": "dnoegel/php-xdg-base-dir",
@@ -2125,16 +2125,16 @@
         },
         {
             "name": "spatie/laravel-cors",
-            "version": "1.4.0",
+            "version": "1.5.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/spatie/laravel-cors.git",
-                "reference": "54d85a92af8d8305e872d50e14fad4f42ce67428"
+                "reference": "9f8992f2b5e13482f129df480daa21429c63c5e4"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/spatie/laravel-cors/zipball/54d85a92af8d8305e872d50e14fad4f42ce67428",
-                "reference": "54d85a92af8d8305e872d50e14fad4f42ce67428",
+                "url": "https://api.github.com/repos/spatie/laravel-cors/zipball/9f8992f2b5e13482f129df480daa21429c63c5e4",
+                "reference": "9f8992f2b5e13482f129df480daa21429c63c5e4",
                 "shasum": ""
             },
             "require": {
@@ -2180,7 +2180,7 @@
                 "request",
                 "spatie"
             ],
-            "time": "2019-02-27T08:08:54+00:00"
+            "time": "2019-06-05T19:59:25+00:00"
         },
         {
             "name": "spatie/laravel-tail",
