@@ -23,7 +23,7 @@ RUN composer install \
     --prefer-dist
 
 # PHP
-FROM php:7.3-fpm as application
+FROM php:7.3-fpm-stretch as application
 
 LABEL maintainer="hello@guillaumebriday.fr"
 
