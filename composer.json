@@ -1,5 +1,5 @@
 {
-    "name": "Todolist Backend",
+    "name": "guillaumebriday/todolist-backend-laravel",
     "description": "Todolist Backend",
     "keywords": ["todolist", "laravel"],
     "license": "MIT",
