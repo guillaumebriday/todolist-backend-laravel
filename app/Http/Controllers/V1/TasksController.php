@@ -18,12 +18,22 @@ use Illuminate\Http\Response;
 class TasksController extends Controller
 {
     /**
+     * Create a new controller instance.
+     *
+     * @return void
+     */
+    public function __construct()
+    {
+        $this->authorizeResource(Task::class, 'task');
+    }
+
+    /**
      * Display a listing of the resource.
      */
     public function index(): ResourceCollection
     {
         return TaskResource::collection(
-            Task::all()
+            auth()->user()->tasks()->get()
         );
     }
 
@@ -78,7 +88,7 @@ class TasksController extends Controller
     {
         broadcast(new TasksDeleted)->toOthers();
 
-        Task::completed()->delete();
+        auth()->user()->tasks()->completed()->delete();
 
         return response()->noContent();
     }
