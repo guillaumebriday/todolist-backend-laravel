@@ -2,7 +2,6 @@
 
 namespace App\Models;
 
-use App\Scopes\AuthorScope;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
@@ -31,18 +30,6 @@ class Task extends Model
         'due_at' => 'datetime',
         'is_completed' => 'boolean'
     ];
-
-    /**
-     * The "booting" method of the model.
-     *
-     * @return void
-     */
-    protected static function boot(): void
-    {
-        parent::boot();
-
-        static::addGlobalScope(new AuthorScope);
-    }
 
     /**
      * Set the task's due_at date in UTC.
