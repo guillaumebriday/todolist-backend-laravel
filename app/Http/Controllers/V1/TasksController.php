@@ -33,7 +33,7 @@ class TasksController extends Controller
     public function index(): ResourceCollection
     {
         return TaskResource::collection(
-            Task::all()
+            auth()->user()->tasks()->get()
         );
     }
 
@@ -88,7 +88,7 @@ class TasksController extends Controller
     {
         broadcast(new TasksDeleted)->toOthers();
 
-        Task::completed()->delete();
+        auth()->user()->tasks()->completed()->delete();
 
         return response()->noContent();
     }
