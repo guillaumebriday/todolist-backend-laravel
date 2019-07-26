@@ -36,6 +36,21 @@ class TaskTest extends TestCase
     }
 
     /** @test */
+    public function user_cannot_retrieve_another_tasks()
+    {
+        $anakin = $this->anakin();
+        factory(Task::class, 3)->create(['user_id' => $anakin]);
+        factory(Task::class, 3)->create();
+
+        $this->assertEquals(Task::count(), 6);
+
+        $this->actingAs($anakin)
+            ->json('GET', '/api/v1/tasks')
+            ->assertStatus(200)
+            ->assertJsonCount(3, 'data');
+    }
+
+    /** @test */
     public function user_can_retrieve_a_task()
     {
         $anakin = $this->anakin();
@@ -70,6 +85,20 @@ class TaskTest extends TestCase
                 ]
             ])
             ->assertJsonCount(1);
+    }
+
+    /** @test */
+    public function user_cannot_retrieve_a_task()
+    {
+        $anakin = $this->anakin();
+        $task = factory(Task::class)->create(['user_id' => $anakin]);
+
+        $this->actingAs($this->user())
+            ->json('GET', "/api/v1/tasks/{$task->id}")
+            ->assertStatus(403)
+            ->assertJson([
+                'message' => 'This action is unauthorized.'
+            ]);
     }
 
     /** @test */
@@ -111,6 +140,22 @@ class TaskTest extends TestCase
                 ]
             ])
             ->assertJsonCount(1);
+    }
+
+    /** @test */
+    public function user_cannot_update_a_task()
+    {
+        $anakin = $this->anakin();
+        $task = factory(Task::class)->create(['user_id' => $anakin]);
+
+        $this->actingAs($this->user())
+            ->json('PATCH', "/api/v1/tasks/{$task->id}", [
+                'title' => 'Get groceries'
+            ])
+            ->assertStatus(403)
+            ->assertJson([
+                'message' => 'This action is unauthorized.'
+            ]);
     }
 
     /** @test */
@@ -246,11 +291,27 @@ class TaskTest extends TestCase
     }
 
     /** @test */
+    public function user_cannot_delete_a_task()
+    {
+        $anakin = $this->anakin();
+        $task = factory(Task::class)->create(['user_id' => $anakin]);
+
+        $this->actingAs($this->user())
+            ->json('DELETE', "/api/v1/tasks/{$task->id}")
+            ->assertStatus(403)
+            ->assertJson([
+                'message' => 'This action is unauthorized.'
+            ]);
+
+        $this->assertDatabaseHas('tasks', $task->toArray());
+    }
+
+    /** @test */
     public function user_can_delete_all_completed_tasks()
     {
         $anakin = $this->anakin();
-        $tasks = factory(Task::class, 2)->create(['user_id' => $anakin]);
-        $completedTasks = factory(Task::class, 2)->states('completed')->create(['user_id' => $anakin]);
+        factory(Task::class, 2)->create(['user_id' => $anakin]);
+        factory(Task::class, 2)->states('completed')->create(['user_id' => $anakin]);
 
         $this->actingAs($anakin)
             ->json('DELETE', '/api/v1/tasks')
