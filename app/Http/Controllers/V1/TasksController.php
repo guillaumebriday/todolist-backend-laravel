@@ -18,6 +18,16 @@ use Illuminate\Http\Response;
 class TasksController extends Controller
 {
     /**
+     * Create a new controller instance.
+     *
+     * @return void
+     */
+    public function __construct()
+    {
+        $this->authorizeResource(Task::class, 'task');
+    }
+
+    /**
      * Display a listing of the resource.
      */
     public function index(): ResourceCollection
