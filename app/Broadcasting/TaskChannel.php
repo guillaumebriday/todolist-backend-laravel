@@ -18,12 +18,8 @@ class TaskChannel
 
     /**
      * Authenticate the user's access to the channel.
-     *
-     * @param  \App\User  $user
-     * @param  int  $id
-     * @return array|bool
      */
-    public function join(User $user, $id)
+    public function join(User $user, int $id): bool
     {
         return $user->id == $id;
     }
