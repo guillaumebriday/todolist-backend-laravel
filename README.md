@@ -1,6 +1,6 @@
 # Todolist-backend Application
 
-[![pipeline status](https://gitlab.com/guillaumebriday/todolist-backend-laravel/badges/master/pipeline.svg)](https://gitlab.com/guillaumebriday/todolist-backend-laravel/commits/master)
+[![pipeline status](https://gitlab.com/guillaumebriday/todolist-backend-laravel/badges/master/pipeline.svg)](https://gitlab.com/guillaumebriday/todolist-backend-laravel/pipelines)
 [![Donate](https://img.shields.io/badge/Donate-PayPal-green.svg)](https://www.paypal.me/guillaumebriday)
 
 > Backend for https://github.com/guillaumebriday/todolist-frontend-vuejs app, built for a serie of articles on my [blog](https://guillaumebriday.fr/).
