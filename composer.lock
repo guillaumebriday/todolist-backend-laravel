@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "7e233c4898222c44bf757f99ac6d3520",
+    "content-hash": "0f83c9d31378f588a61c67650033a886",
     "packages": [
         {
             "name": "dnoegel/php-xdg-base-dir",
@@ -804,21 +804,21 @@
         },
         {
             "name": "laravel/slack-notification-channel",
-            "version": "v2.0.0",
+            "version": "v2.0.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/laravel/slack-notification-channel.git",
-                "reference": "bfa411ba8affbcfad3a36b8716cf2ed906a248ac"
+                "reference": "c5781470bf1e913d691be17d4d0ee65b6220edb7"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/laravel/slack-notification-channel/zipball/bfa411ba8affbcfad3a36b8716cf2ed906a248ac",
-                "reference": "bfa411ba8affbcfad3a36b8716cf2ed906a248ac",
+                "url": "https://api.github.com/repos/laravel/slack-notification-channel/zipball/c5781470bf1e913d691be17d4d0ee65b6220edb7",
+                "reference": "c5781470bf1e913d691be17d4d0ee65b6220edb7",
                 "shasum": ""
             },
             "require": {
                 "guzzlehttp/guzzle": "^6.0",
-                "illuminate/notifications": "~5.8.0",
+                "illuminate/notifications": "~5.8.0|^6.0",
                 "php": "^7.1.3"
             },
             "require-dev": {
@@ -857,7 +857,7 @@
                 "notifications",
                 "slack"
             ],
-            "time": "2019-02-26T16:15:25+00:00"
+            "time": "2019-07-30T15:45:10+00:00"
         },
         {
             "name": "laravel/tinker",
