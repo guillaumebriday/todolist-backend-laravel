@@ -8,7 +8,7 @@
         "php": "^7.2",
         "fideloper/proxy": "4.2.0",
         "laravel/framework": "5.8.30",
-        "laravel/slack-notification-channel": "2.0.0",
+        "laravel/slack-notification-channel": "2.0.1",
         "laravel/tinker": "1.0.9",
         "pusher/pusher-php-server": "4.0.0",
         "spatie/laravel-backup": "6.3.1",
