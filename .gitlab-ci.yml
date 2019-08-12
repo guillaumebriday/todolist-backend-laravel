@@ -18,22 +18,20 @@ cache:
     - vendor/
 
 .setup_test_env: &setup_test_env
-  services:
-    - mysql:5.7
-
   before_script:
     # Install node and some other deps
     - apt-get update -yqq
-    - apt-get install zip unzip git libjpeg-dev libpng-dev libfreetype6-dev -yqq
+    - apt-get install zip unzip git libjpeg-dev libpng-dev libfreetype6-dev -yqq --no-install-recommends
     - docker-php-ext-install gd pdo_mysql
     - curl -sS https://getcomposer.org/installer | php
     - php composer.phar install --no-progress --no-interaction --optimize-autoloader
     - cp .env.gitlab .env.testing
-    - php artisan key:generate
 
 # Stage: Test
 phpunit:
   <<: *setup_test_env
+  services:
+    - mysql:5.7
   stage: test
   script:
   - vendor/bin/phpunit --testdox
