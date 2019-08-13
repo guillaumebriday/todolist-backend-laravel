@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "3f99dbc31efe6c5d802c73d6211d3231",
+    "content-hash": "3a26cb80f272a4af820c32bef56d138e",
     "packages": [
         {
             "name": "dnoegel/php-xdg-base-dir",
@@ -7370,7 +7370,7 @@
         },
         {
             "name": "symfony/filesystem",
-            "version": "v4.3.2",
+            "version": "v4.3.3",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/filesystem.git",
