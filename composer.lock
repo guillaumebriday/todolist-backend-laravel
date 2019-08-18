@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "d5025b6a0aa79fd5bdc535158552f1b2",
+    "content-hash": "3f12881943138dede0e98479166e53fb",
     "packages": [
         {
             "name": "dnoegel/php-xdg-base-dir",
@@ -2111,9 +2111,9 @@
             "authors": [
                 {
                     "name": "Freek Van der Herten",
+                    "role": "Developer",
                     "email": "freek@spatie.be",
-                    "homepage": "https://spatie.be",
-                    "role": "Developer"
+                    "homepage": "https://spatie.be"
                 }
             ],
             "description": "A Laravel package to backup your application",
@@ -2274,9 +2274,9 @@
             "authors": [
                 {
                     "name": "Alex Vanderbist",
+                    "role": "Developer",
                     "email": "alex@spatie.be",
-                    "homepage": "https://spatie.be",
-                    "role": "Developer"
+                    "homepage": "https://spatie.be"
                 }
             ],
             "description": "Easily create, use and destroy temporary directories",
@@ -5239,16 +5239,16 @@
         },
         {
             "name": "nunomaduro/phpinsights",
-            "version": "v1.8.0",
+            "version": "v1.8.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/nunomaduro/phpinsights.git",
-                "reference": "dcd3ca897109dacdd8b6a22695a3b84a19abd834"
+                "reference": "4c5247d95f4bddbcab3a7361b785988cb0759686"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/nunomaduro/phpinsights/zipball/dcd3ca897109dacdd8b6a22695a3b84a19abd834",
-                "reference": "dcd3ca897109dacdd8b6a22695a3b84a19abd834",
+                "url": "https://api.github.com/repos/nunomaduro/phpinsights/zipball/4c5247d95f4bddbcab3a7361b785988cb0759686",
+                "reference": "4c5247d95f4bddbcab3a7361b785988cb0759686",
                 "shasum": ""
             },
             "require": {
@@ -5313,7 +5313,7 @@
                 "quality",
                 "source"
             ],
-            "time": "2019-08-14T18:41:52+00:00"
+            "time": "2019-08-18T21:36:30+00:00"
         },
         {
             "name": "object-calisthenics/phpcs-calisthenics-rules",
