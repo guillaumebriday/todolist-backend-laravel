@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "92b8a6b28c2d1e889ffb7d1e4374957f",
+    "content-hash": "ca360c57f626f9ba62aac324fd4ad74b",
     "packages": [
         {
             "name": "dnoegel/php-xdg-base-dir",
@@ -5239,16 +5239,16 @@
         },
         {
             "name": "nunomaduro/phpinsights",
-            "version": "v1.8.1",
+            "version": "v1.9.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/nunomaduro/phpinsights.git",
-                "reference": "4c5247d95f4bddbcab3a7361b785988cb0759686"
+                "reference": "7453929847df79aeaacddc2753186aa6b16cbdb4"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/nunomaduro/phpinsights/zipball/4c5247d95f4bddbcab3a7361b785988cb0759686",
-                "reference": "4c5247d95f4bddbcab3a7361b785988cb0759686",
+                "url": "https://api.github.com/repos/nunomaduro/phpinsights/zipball/7453929847df79aeaacddc2753186aa6b16cbdb4",
+                "reference": "7453929847df79aeaacddc2753186aa6b16cbdb4",
                 "shasum": ""
             },
             "require": {
@@ -5313,7 +5313,7 @@
                 "quality",
                 "source"
             ],
-            "time": "2019-08-18T21:36:30+00:00"
+            "time": "2019-08-20T14:41:42+00:00"
         },
         {
             "name": "object-calisthenics/phpcs-calisthenics-rules",
