@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "d8bb6d0bf89e9aa2957c51426ffb632c",
+    "content-hash": "a2ac29bc577ef7e9b063d44a8b08a18b",
     "packages": [
         {
             "name": "dnoegel/php-xdg-base-dir",
@@ -804,26 +804,26 @@
         },
         {
             "name": "laravel/slack-notification-channel",
-            "version": "v2.0.1",
+            "version": "v2.0.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/laravel/slack-notification-channel.git",
-                "reference": "c5781470bf1e913d691be17d4d0ee65b6220edb7"
+                "reference": "ecc90a70791195d6f5e20b2732a5eb1eb9619d10"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/laravel/slack-notification-channel/zipball/c5781470bf1e913d691be17d4d0ee65b6220edb7",
-                "reference": "c5781470bf1e913d691be17d4d0ee65b6220edb7",
+                "url": "https://api.github.com/repos/laravel/slack-notification-channel/zipball/ecc90a70791195d6f5e20b2732a5eb1eb9619d10",
+                "reference": "ecc90a70791195d6f5e20b2732a5eb1eb9619d10",
                 "shasum": ""
             },
             "require": {
                 "guzzlehttp/guzzle": "^6.0",
-                "illuminate/notifications": "~5.8.0|^6.0",
+                "illuminate/notifications": "~5.8.0|^6.0|^7.0",
                 "php": "^7.1.3"
             },
             "require-dev": {
                 "mockery/mockery": "^1.0",
-                "phpunit/phpunit": "^7.0"
+                "phpunit/phpunit": "^7.0|^8.0"
             },
             "type": "library",
             "extra": {
@@ -857,7 +857,7 @@
                 "notifications",
                 "slack"
             ],
-            "time": "2019-07-30T15:45:10+00:00"
+            "time": "2019-08-27T14:40:26+00:00"
         },
         {
             "name": "laravel/tinker",
