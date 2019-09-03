@@ -1,10 +1,8 @@
 ---
 - name: Ensures todolist-backend dirs exist
   file:
-    path: "{{ item }}"
+    path: "{{ app_dir }}"
     state: directory
-  with_items:
-    - "{{ app_dir }}"
 
 - name: Adding .env file
   template:
