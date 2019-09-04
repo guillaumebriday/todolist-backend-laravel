@@ -13,7 +13,7 @@
         "pusher/pusher-php-server": "4.0.0",
         "spatie/laravel-backup": "6.4.0",
         "spatie/laravel-cors": "1.6.0",
-        "spatie/laravel-tail": "3.2.4",
+        "spatie/laravel-tail": "3.3.0",
         "tymon/jwt-auth": "1.0.0-rc.4.1"
     },
     "require-dev": {
