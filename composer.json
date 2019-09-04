@@ -12,7 +12,7 @@
         "laravel/tinker": "1.0.10",
         "pusher/pusher-php-server": "4.0.0",
         "spatie/laravel-backup": "6.4.0",
-        "spatie/laravel-cors": "1.5.2",
+        "spatie/laravel-cors": "1.6.0",
         "spatie/laravel-tail": "3.2.4",
         "tymon/jwt-auth": "1.0.0-rc.4.1"
     },
