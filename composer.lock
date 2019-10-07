@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "c7cb7ca94dcb41e743c7bfe4c986bc27",
+    "content-hash": "9c9e90fc11e108a1d23f9b6d9e42eb2a",
     "packages": [
         {
             "name": "dnoegel/php-xdg-base-dir",
@@ -2055,16 +2055,16 @@
         },
         {
             "name": "spatie/laravel-backup",
-            "version": "6.4.2",
+            "version": "6.5.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/spatie/laravel-backup.git",
-                "reference": "451bc7c685a239108e33d3665336e4ffefb80989"
+                "reference": "b80b3f5c7570365179c18a154a85c43fb32de5a0"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/spatie/laravel-backup/zipball/451bc7c685a239108e33d3665336e4ffefb80989",
-                "reference": "451bc7c685a239108e33d3665336e4ffefb80989",
+                "url": "https://api.github.com/repos/spatie/laravel-backup/zipball/b80b3f5c7570365179c18a154a85c43fb32de5a0",
+                "reference": "b80b3f5c7570365179c18a154a85c43fb32de5a0",
                 "shasum": ""
             },
             "require": {
@@ -2126,7 +2126,7 @@
                 "laravel-backup",
                 "spatie"
             ],
-            "time": "2019-09-30T17:32:51+00:00"
+            "time": "2019-10-07T09:51:50+00:00"
         },
         {
             "name": "spatie/laravel-cors",
