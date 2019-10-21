@@ -96,10 +96,10 @@ deploy_prod:
 
     # start new containers
     - ssh root@guillaumebriday.xyz \
-      "docker run --rm --name todolist-server --link todolist-db --env-file /var/www/todolist-backend/.env -d ${IMAGE_TAG_APPLICATION}"
+      "docker run --restart unless-stopped --name todolist-server --link todolist-db --env-file /var/www/todolist-backend/.env -d ${IMAGE_TAG_APPLICATION}"
 
     - ssh root@guillaumebriday.xyz \
-      "docker run --rm -d --name todolist-nginx --link todolist-server -l traefik.frontend.rule=Host:todolist-api.guillaumebriday.xyz ${IMAGE_TAG_NGINX}"
+      "docker run --restart unless-stopped -d --name todolist-nginx --link todolist-server -l traefik.frontend.rule=Host:todolist-api.guillaumebriday.xyz ${IMAGE_TAG_NGINX}"
 
   only:
     - master
