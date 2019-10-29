@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "bffe2a5c0ddccb0b14ba80d8e6fb7c0c",
+    "content-hash": "5b89a580d79b3277b4152e3575b37d3b",
     "packages": [
         {
             "name": "dnoegel/php-xdg-base-dir",
@@ -980,16 +980,16 @@
         },
         {
             "name": "league/flysystem",
-            "version": "1.0.56",
+            "version": "1.0.57",
             "source": {
                 "type": "git",
                 "url": "https://github.com/thephpleague/flysystem.git",
-                "reference": "90e3f83cb10ef6b058d70f95267030e7a6236518"
+                "reference": "0e9db7f0b96b9f12dcf6f65bc34b72b1a30ea55a"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/thephpleague/flysystem/zipball/90e3f83cb10ef6b058d70f95267030e7a6236518",
-                "reference": "90e3f83cb10ef6b058d70f95267030e7a6236518",
+                "url": "https://api.github.com/repos/thephpleague/flysystem/zipball/0e9db7f0b96b9f12dcf6f65bc34b72b1a30ea55a",
+                "reference": "0e9db7f0b96b9f12dcf6f65bc34b72b1a30ea55a",
                 "shasum": ""
             },
             "require": {
@@ -1060,7 +1060,7 @@
                 "sftp",
                 "storage"
             ],
-            "time": "2019-10-12T13:05:59+00:00"
+            "time": "2019-10-16T21:01:05+00:00"
         },
         {
             "name": "monolog/monolog",
@@ -2055,16 +2055,16 @@
         },
         {
             "name": "spatie/laravel-backup",
-            "version": "6.7.1",
+            "version": "6.7.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/spatie/laravel-backup.git",
-                "reference": "f5b7078a3bfe983900c393fb51eeed4fc0b6b6d1"
+                "reference": "ab48ebb31388e004dfac9d6203033e29db9a24a9"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/spatie/laravel-backup/zipball/f5b7078a3bfe983900c393fb51eeed4fc0b6b6d1",
-                "reference": "f5b7078a3bfe983900c393fb51eeed4fc0b6b6d1",
+                "url": "https://api.github.com/repos/spatie/laravel-backup/zipball/ab48ebb31388e004dfac9d6203033e29db9a24a9",
+                "reference": "ab48ebb31388e004dfac9d6203033e29db9a24a9",
                 "shasum": ""
             },
             "require": {
@@ -2126,7 +2126,7 @@
                 "laravel-backup",
                 "spatie"
             ],
-            "time": "2019-10-16T14:55:55+00:00"
+            "time": "2019-10-29T03:46:02+00:00"
         },
         {
             "name": "spatie/laravel-cors",
