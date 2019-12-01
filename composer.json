@@ -24,7 +24,7 @@
         "mockery/mockery": "1.2.4",
         "nunomaduro/collision": "3.0.1",
         "nunomaduro/phpinsights": "1.9.0",
-        "phpunit/phpunit": "8.4.2"
+        "phpunit/phpunit": "8.4.3"
     },
     "autoload": {
         "classmap": [
