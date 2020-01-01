@@ -6,7 +6,7 @@
     "type": "project",
     "require": {
         "php": "^7.2",
-        "fideloper/proxy": "4.2.1",
+        "fideloper/proxy": "4.2.2",
         "laravel/framework": "5.8.35",
         "laravel/slack-notification-channel": "2.0.2",
         "laravel/tinker": "1.0.10",
