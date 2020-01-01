@@ -7,7 +7,7 @@
     "require": {
         "php": "^7.2",
         "fideloper/proxy": "4.2.2",
-        "laravel/framework": "5.8.35",
+        "laravel/framework": "5.8.36",
         "laravel/slack-notification-channel": "2.0.2",
         "laravel/tinker": "1.0.10",
         "pusher/pusher-php-server": "4.1.0",
