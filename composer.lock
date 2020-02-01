@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "f4d5248f431f460d1a001232b25ad4ef",
+    "content-hash": "85b46dc8350af3a05e334c91fe6ba6d0",
     "packages": [
         {
             "name": "dnoegel/php-xdg-base-dir",
@@ -979,16 +979,16 @@
         },
         {
             "name": "league/flysystem",
-            "version": "1.0.62",
+            "version": "1.0.63",
             "source": {
                 "type": "git",
                 "url": "https://github.com/thephpleague/flysystem.git",
-                "reference": "14dd5d7dff5fbc29ca9a2a53ff109760e40d91a0"
+                "reference": "8132daec326565036bc8e8d1876f77ec183a7bd6"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/thephpleague/flysystem/zipball/14dd5d7dff5fbc29ca9a2a53ff109760e40d91a0",
-                "reference": "14dd5d7dff5fbc29ca9a2a53ff109760e40d91a0",
+                "url": "https://api.github.com/repos/thephpleague/flysystem/zipball/8132daec326565036bc8e8d1876f77ec183a7bd6",
+                "reference": "8132daec326565036bc8e8d1876f77ec183a7bd6",
                 "shasum": ""
             },
             "require": {
@@ -1059,7 +1059,7 @@
                 "sftp",
                 "storage"
             ],
-            "time": "2019-12-29T14:46:55+00:00"
+            "time": "2020-01-04T16:30:31+00:00"
         },
         {
             "name": "monolog/monolog",
@@ -2017,21 +2017,21 @@
         },
         {
             "name": "spatie/db-dumper",
-            "version": "2.15.0",
+            "version": "2.15.3",
             "source": {
                 "type": "git",
                 "url": "https://github.com/spatie/db-dumper.git",
-                "reference": "ccb7dd7557cd119b21ea853a893da4d1b0ff08b6"
+                "reference": "e167b8bf925c5da553f885326bb7bfaed3f95d15"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/spatie/db-dumper/zipball/ccb7dd7557cd119b21ea853a893da4d1b0ff08b6",
-                "reference": "ccb7dd7557cd119b21ea853a893da4d1b0ff08b6",
+                "url": "https://api.github.com/repos/spatie/db-dumper/zipball/e167b8bf925c5da553f885326bb7bfaed3f95d15",
+                "reference": "e167b8bf925c5da553f885326bb7bfaed3f95d15",
                 "shasum": ""
             },
             "require": {
                 "php": "^7.2",
-                "symfony/process": "^4.2"
+                "symfony/process": "^4.2|^5.0"
             },
             "require-dev": {
                 "phpunit/phpunit": "^7.0|^8.0"
@@ -2063,20 +2063,20 @@
                 "mysqldump",
                 "spatie"
             ],
-            "time": "2019-11-11T10:40:42+00:00"
+            "time": "2020-01-24T13:05:20+00:00"
         },
         {
             "name": "spatie/laravel-backup",
-            "version": "6.7.4",
+            "version": "6.7.7",
             "source": {
                 "type": "git",
                 "url": "https://github.com/spatie/laravel-backup.git",
-                "reference": "e3ea9bc9994be5cf8d9e10b202ed838380e0b4e4"
+                "reference": "c2aeb1685007ee1cc2b3f86c26315aeb32602a93"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/spatie/laravel-backup/zipball/e3ea9bc9994be5cf8d9e10b202ed838380e0b4e4",
-                "reference": "e3ea9bc9994be5cf8d9e10b202ed838380e0b4e4",
+                "url": "https://api.github.com/repos/spatie/laravel-backup/zipball/c2aeb1685007ee1cc2b3f86c26315aeb32602a93",
+                "reference": "c2aeb1685007ee1cc2b3f86c26315aeb32602a93",
                 "shasum": ""
             },
             "require": {
@@ -2097,7 +2097,7 @@
                 "league/flysystem-aws-s3-v3": "^1.0",
                 "mockery/mockery": "^1.0",
                 "orchestra/testbench": "3.8.*|4.*",
-                "phpunit/phpunit": "^8.0"
+                "phpunit/phpunit": "^8.4"
             },
             "suggest": {
                 "laravel/slack-notification-channel": "Required for sending notifications via Slack"
@@ -2138,7 +2138,7 @@
                 "laravel-backup",
                 "spatie"
             ],
-            "time": "2019-11-07T22:11:24+00:00"
+            "time": "2020-01-27T13:58:27+00:00"
         },
         {
             "name": "spatie/laravel-cors",
@@ -2257,16 +2257,16 @@
         },
         {
             "name": "spatie/temporary-directory",
-            "version": "1.2.1",
+            "version": "1.2.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/spatie/temporary-directory.git",
-                "reference": "3e51af9a8361f85cffc1fb2c52135f3e064758cc"
+                "reference": "fcb127e615700751dac2aefee0ea2808ff3f5bb1"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/spatie/temporary-directory/zipball/3e51af9a8361f85cffc1fb2c52135f3e064758cc",
-                "reference": "3e51af9a8361f85cffc1fb2c52135f3e064758cc",
+                "url": "https://api.github.com/repos/spatie/temporary-directory/zipball/fcb127e615700751dac2aefee0ea2808ff3f5bb1",
+                "reference": "fcb127e615700751dac2aefee0ea2808ff3f5bb1",
                 "shasum": ""
             },
             "require": {
@@ -2299,7 +2299,7 @@
                 "spatie",
                 "temporary-directory"
             ],
-            "time": "2019-08-28T06:53:51+00:00"
+            "time": "2019-12-15T18:52:09+00:00"
         },
         {
             "name": "swiftmailer/swiftmailer",
@@ -2734,16 +2734,16 @@
         },
         {
             "name": "symfony/finder",
-            "version": "v4.4.2",
+            "version": "v4.4.4",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/finder.git",
-                "reference": "ce8743441da64c41e2a667b8eb66070444ed911e"
+                "reference": "3a50be43515590faf812fbd7708200aabc327ec3"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/finder/zipball/ce8743441da64c41e2a667b8eb66070444ed911e",
-                "reference": "ce8743441da64c41e2a667b8eb66070444ed911e",
+                "url": "https://api.github.com/repos/symfony/finder/zipball/3a50be43515590faf812fbd7708200aabc327ec3",
+                "reference": "3a50be43515590faf812fbd7708200aabc327ec3",
                 "shasum": ""
             },
             "require": {
@@ -2779,7 +2779,7 @@
             ],
             "description": "Symfony Finder Component",
             "homepage": "https://symfony.com",
-            "time": "2019-11-17T21:56:56+00:00"
+            "time": "2020-01-04T13:00:46+00:00"
         },
         {
             "name": "symfony/http-foundation",
@@ -3449,16 +3449,16 @@
         },
         {
             "name": "symfony/process",
-            "version": "v4.4.2",
+            "version": "v4.4.4",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/process.git",
-                "reference": "b84501ad50adb72a94fb460a5b5c91f693e99c9b"
+                "reference": "f5697ab4cb14a5deed7473819e63141bf5352c36"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/process/zipball/b84501ad50adb72a94fb460a5b5c91f693e99c9b",
-                "reference": "b84501ad50adb72a94fb460a5b5c91f693e99c9b",
+                "url": "https://api.github.com/repos/symfony/process/zipball/f5697ab4cb14a5deed7473819e63141bf5352c36",
+                "reference": "f5697ab4cb14a5deed7473819e63141bf5352c36",
                 "shasum": ""
             },
             "require": {
@@ -3494,7 +3494,7 @@
             ],
             "description": "Symfony Process Component",
             "homepage": "https://symfony.com",
-            "time": "2019-12-06T10:06:46+00:00"
+            "time": "2020-01-09T09:50:08+00:00"
         },
         {
             "name": "symfony/routing",
