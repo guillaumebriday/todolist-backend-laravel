@@ -79,31 +79,31 @@ build_nginx_image:
   - echo "$SSH_PRIVATE_KEY" | tr -d '\r' | ssh-add - > /dev/null
   - mkdir -p ~/.ssh
   - chmod 700 ~/.ssh
-  - ssh-keyscan -H 'guillaumebriday.xyz' >> ~/.ssh/known_hosts
+  - ssh-keyscan -H 'guillaumebriday.fr' >> ~/.ssh/known_hosts
 
 deploy_prod:
   <<: *setup_deploy_env
   stage: deploy
   script:
     # log into Docker registry
-    - ssh root@guillaumebriday.xyz "docker login -u gitlab-ci-token -p ${CI_JOB_TOKEN} ${REGISTRY_URL}"
-    - ssh root@guillaumebriday.xyz "docker pull ${IMAGE_TAG_APPLICATION}"
-    - ssh root@guillaumebriday.xyz "docker pull ${IMAGE_TAG_NGINX}"
+    - ssh root@guillaumebriday.fr "docker login -u gitlab-ci-token -p ${CI_JOB_TOKEN} ${REGISTRY_URL}"
+    - ssh root@guillaumebriday.fr "docker pull ${IMAGE_TAG_APPLICATION}"
+    - ssh root@guillaumebriday.fr "docker pull ${IMAGE_TAG_NGINX}"
 
     # stop containers, remove image.
-    - ssh root@guillaumebriday.xyz "docker stop todolist-nginx" || true
-    - ssh root@guillaumebriday.xyz "docker stop todolist-server" || true
+    - ssh root@guillaumebriday.fr "docker stop todolist-nginx" || true
+    - ssh root@guillaumebriday.fr "docker stop todolist-server" || true
 
     # start new containers
-    - ssh root@guillaumebriday.xyz \
+    - ssh root@guillaumebriday.fr \
       "docker run --restart unless-stopped --name todolist-server --link todolist-db --env-file /var/www/todolist-backend/.env -d ${IMAGE_TAG_APPLICATION}"
 
-    - ssh root@guillaumebriday.xyz \
-      "docker run --restart unless-stopped -d --name todolist-nginx --link todolist-server -l traefik.frontend.rule=Host:todolist-api.guillaumebriday.xyz ${IMAGE_TAG_NGINX}"
+    - ssh root@guillaumebriday.fr \
+      "docker run --restart unless-stopped -d --name todolist-nginx --link todolist-server -l traefik.frontend.rule=Host:todolist-api.guillaumebriday.fr ${IMAGE_TAG_NGINX}"
 
   only:
     - master
   when: manual
   environment:
     name: production
-    url: https://todolist-api.guillaumebriday.xyz/
+    url: https://todolist-api.guillaumebriday.fr/
