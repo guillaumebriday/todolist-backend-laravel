@@ -42,12 +42,6 @@ php-cs-fixer:
   script:
     - vendor/bin/php-cs-fixer fix --config=.php_cs --verbose --dry-run --diff
 
-phpinsights:
-  <<: *setup_test_env
-  stage: test
-  script:
-    - vendor/bin/phpinsights --no-interaction
-
 # Stage: Build
 .setup_build_env: &setup_build_env
   stage: build
