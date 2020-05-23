@@ -2,7 +2,9 @@
 FROM nginx:latest as nginx
 
 LABEL traefik.enable="true"
-LABEL traefik.port="8000"
+LABEL traefik.http.services.todolist.loadbalancer.server.port="8000"
+LABEL traefik.http.routers.todolist.entrypoints="websecure"
+LABEL traefik.http.routers.miniflux.rule="Host(`todolist-api.guillaumebriday.fr`)"
 
 COPY .cloud/nginx/nginx.conf /etc/nginx/conf.d/default.conf
 COPY public /var/www/public
