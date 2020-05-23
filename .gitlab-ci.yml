@@ -81,8 +81,7 @@ deploy_prod:
   script:
     # log into Docker registry
     - ssh root@51.15.244.250 "docker login -u gitlab-ci-token -p ${CI_JOB_TOKEN} ${REGISTRY_URL}"
-    - ssh root@51.15.244.250 "docker pull ${IMAGE_TAG_APPLICATION}"
-    - ssh root@51.15.244.250 "docker pull ${IMAGE_TAG_NGINX}"
+    - ssh root@51.15.244.250 "docker pull ${IMAGE_TAG_APPLICATION} && docker pull ${IMAGE_TAG_NGINX}"
 
     # stop containers, remove image.
     - ssh root@51.15.244.250 "docker stop todolist-nginx" || true
