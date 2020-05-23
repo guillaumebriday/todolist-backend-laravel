@@ -80,19 +80,14 @@ deploy_prod:
   stage: deploy
   script:
     # log into Docker registry
-    - ssh root@51.15.244.250 "docker login -u gitlab-ci-token -p ${CI_JOB_TOKEN} ${REGISTRY_URL}"
-    - ssh root@51.15.244.250 "docker pull ${IMAGE_TAG_APPLICATION} && docker pull ${IMAGE_TAG_NGINX}"
-
-    # stop containers, remove image.
-    - ssh root@51.15.244.250 "docker stop todolist-nginx" || true
-    - ssh root@51.15.244.250 "docker stop todolist-server" || true
-
-    # start new containers
-    - ssh root@51.15.244.250 \
-      "docker run --restart unless-stopped --name todolist-server --link todolist-db --env-file /var/www/todolist-backend/.env -d ${IMAGE_TAG_APPLICATION}"
-
-    - ssh root@51.15.244.250 \
-      "docker run --restart unless-stopped -d --name todolist-nginx --link todolist-server ${IMAGE_TAG_NGINX}"
+    - ssh root@51.15.244.250 "
+      docker login -u gitlab-ci-token -p ${CI_JOB_TOKEN} ${REGISTRY_URL} &&
+      docker pull ${IMAGE_TAG_APPLICATION} &&
+      docker pull ${IMAGE_TAG_NGINX} &&
+      docker stop todolist-nginx || true &&
+      docker stop todolist-server || true &&
+      docker run --restart unless-stopped --name todolist-server --link todolist-db --env-file /var/www/todolist-backend/.env -d ${IMAGE_TAG_APPLICATION} &&
+      docker run --restart unless-stopped -d --name todolist-nginx --link todolist-server ${IMAGE_TAG_NGINX}"
 
   only:
     - master
