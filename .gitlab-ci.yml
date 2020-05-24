@@ -94,4 +94,4 @@ deploy_prod:
   when: manual
   environment:
     name: production
-    url: https://todolist-api.guillaumebriday.fr/
+    url: https://todolist-api.guillaumebriday.me/

@@ -35,7 +35,7 @@ $ docker-compose run --rm node yarn production
 
 ## Deploy in production
 
-This application is hosted on [Netlify](https://www.netlify.com/) and available on [https://todolist-docs.guillaumebriday.xyz/](https://todolist-docs.guillaumebriday.xyz/).
+This application is hosted on [Netlify](https://www.netlify.com/) and available on [https://todolist-docs.guillaumebriday.me/](https://todolist-docs.guillaumebriday.me/).
 
 ## Contributing
 

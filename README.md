@@ -154,9 +154,9 @@ $ docker run --rm -it -p 8000:8000 --network todolist-backend todolist-backend-l
 
 ## Consume the API
 
-The application is available on [https://todolist-api.guillaumebriday.fr/api/v1/](https://todolist-api.guillaumebriday.fr/api/v1/).
+The application is available on [https://todolist-api.guillaumebriday.me/api/v1/](https://todolist-api.guillaumebriday.me/api/v1/).
 
-The documentation is available in the `docs` folder or on [https://todolist-docs.guillaumebriday.fr](https://todolist-docs.guillaumebriday.fr).
+The documentation is available in the `docs` folder or on [https://todolist-docs.guillaumebriday.me](https://todolist-docs.guillaumebriday.me).
 
 You can consume the API with any client.
 
