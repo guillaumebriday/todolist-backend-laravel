@@ -1,11 +1,6 @@
 module.exports = {
   title: 'Todolist docs',
   description: 'Todolist API documentation',
-  plugins: [
-    ['@vuepress/google-analytics', {
-      ga: 'UA-54003772-9'
-    }]
-  ],
   themeConfig: {
     repo: 'guillaumebriday/todolist-backend-laravel',
     docsRepo: 'guillaumebriday/todolist-backend-laravel',
