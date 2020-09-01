@@ -10,6 +10,6 @@
     "build": "vuepress build docs"
   },
   "dependencies": {
-    "vuepress": "1.5.2"
+    "vuepress": "1.5.4"
   }
 }
